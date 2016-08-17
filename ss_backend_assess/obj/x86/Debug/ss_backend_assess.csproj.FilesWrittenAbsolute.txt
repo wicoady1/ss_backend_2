@@ -1,0 +1,6 @@
+/home/wicoady1/Documents/ss_backend_assess/ss_backend_assess/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/wicoady1/Documents/ss_backend_assess/ss_backend_assess/obj/x86/Debug/ss_backend_assess.gtk-gui.gui.stetic
+/home/wicoady1/Documents/ss_backend_assess/ss_backend_assess/bin/Debug/ss_backend_assess.exe.mdb
+/home/wicoady1/Documents/ss_backend_assess/ss_backend_assess/bin/Debug/ss_backend_assess.exe
+/home/wicoady1/Documents/ss_backend_assess/ss_backend_assess/obj/x86/Debug/ss_backend_assess.exe
+/home/wicoady1/Documents/ss_backend_assess/ss_backend_assess/obj/x86/Debug/ss_backend_assess.exe.mdb
