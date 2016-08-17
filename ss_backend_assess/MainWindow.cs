@@ -19,5 +19,7 @@ public partial class MainWindow: Gtk.Window
 		lblTest.LabelProp = "test";
 		btnTest.Label = "apa aja boleh";
 		//throw new NotImplementedException ();
+
+		ss_backend_assess.connString connStr = new ss_backend_assess.connString ();
 	}
 }
