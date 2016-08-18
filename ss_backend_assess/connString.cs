@@ -20,6 +20,7 @@ namespace ss_backend_assess
 		public SqliteConnection sqlConn;
 		public SqliteCommand sqlComm;
 		public SqliteDataReader sqlReader;
+		public SqliteDataAdapter sqlDataAdapter;
 
 		public connString ()
 		{

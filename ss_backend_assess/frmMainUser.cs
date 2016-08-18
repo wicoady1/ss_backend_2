@@ -43,7 +43,10 @@ namespace ss_backend_assess
 			//throw new NotImplementedException ();
 		}
 
-
+		protected void OnBtnCheckOutClicked (object sender, EventArgs e)
+		{
+			new ss_backend_assess.frmConfirmOrder ();
+		}
 
 		#region Interface
 		public int CosmeticQty{
@@ -70,6 +73,8 @@ namespace ss_backend_assess
 				txtConQty.Text = value.ToString ();
 			}
 		}
+
+
 
 
 		#endregion

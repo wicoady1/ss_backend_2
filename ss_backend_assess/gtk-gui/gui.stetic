@@ -532,6 +532,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">Check Out</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnCheckOutClicked" />
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -612,7 +613,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Entry" id="entry7">
+                  <widget class="Gtk.Entry" id="txtCoupon">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="IsEditable">True</property>
@@ -630,6 +631,7 @@
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Use Coupon</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnBtnSubmitCouponClicked" />
                   </widget>
                   <packing>
                     <property name="Position">2</property>

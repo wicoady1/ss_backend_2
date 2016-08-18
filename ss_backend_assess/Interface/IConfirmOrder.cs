@@ -8,6 +8,15 @@ namespace ss_backend_assess.Interface
 			get;
 			set;
 		}
+
+		string CouponCode {
+			get;
+			set;
+		}
+
+		bool DisableCouponField {
+			set;
+		}
 	}
 }
 

@@ -376,6 +376,7 @@ namespace ss_backend_assess
 			this.btnCosAdd.Clicked += new global::System.EventHandler (this.OnBtnCosAddClicked);
 			this.btnMascara.Clicked += new global::System.EventHandler (this.OnBtnMascaraClicked);
 			this.btnConditioner.Clicked += new global::System.EventHandler (this.OnBtnConditionerClicked);
+			this.btnCheckOut.Clicked += new global::System.EventHandler (this.OnBtnCheckOutClicked);
 		}
 	}
 }

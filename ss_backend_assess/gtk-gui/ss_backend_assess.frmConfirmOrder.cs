@@ -57,7 +57,7 @@ namespace ss_backend_assess
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 			this.txtOrderList = new global::Gtk.TextView ();
 			this.txtOrderList.CanFocus = true;
-			this.txtOrderList.Name = "textview1";
+			this.txtOrderList.Name = "txtOrderList";
 			this.txtOrderList.Editable = false;
 			this.GtkScrolledWindow.Add (this.txtOrderList);
 			this.vbox8.Add (this.GtkScrolledWindow);
@@ -79,7 +79,7 @@ namespace ss_backend_assess
 			// Container child hbox11.Gtk.Box+BoxChild
 			this.txtCoupon = new global::Gtk.Entry ();
 			this.txtCoupon.CanFocus = true;
-			this.txtCoupon.Name = "entry7";
+			this.txtCoupon.Name = "txtCoupon";
 			this.txtCoupon.IsEditable = true;
 			this.txtCoupon.InvisibleChar = '•';
 			this.hbox11.Add (this.txtCoupon);
@@ -131,6 +131,7 @@ namespace ss_backend_assess
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show ();
+			this.btnSubmitCoupon.Clicked += new global::System.EventHandler (this.OnBtnSubmitCouponClicked);
 		}
 	}
 }
