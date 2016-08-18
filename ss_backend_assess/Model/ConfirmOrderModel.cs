@@ -48,6 +48,22 @@ namespace ss_backend_assess.Model
 
 			return Convert.ToInt32(dsResult.Tables [0].Rows [0] ["Price"].ToString ());
 		}
+
+		public int CheckItemStock (string strCode){
+			string strQuery = "select Stock from tblProductData where ProductID = '" + strCode + "'";
+			DataSet dsResult = new DataSet ();
+
+			_conn.sqlConn.Open ();
+			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
+			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
+
+			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
+			dsResult.Reset ();
+			_conn.sqlDataAdapter.Fill (dsResult);
+			_conn.sqlConn.Close ();
+
+			return Convert.ToInt32(dsResult.Tables [0].Rows [0] ["Stock"].ToString ());
+		}
 	}
 }
 

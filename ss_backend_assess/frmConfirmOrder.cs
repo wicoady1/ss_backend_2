@@ -25,6 +25,13 @@ namespace ss_backend_assess
 			//throw new NotImplementedException ();
 		}
 
+		protected void OnBtnGoPaymentClicked (object sender, EventArgs e)
+		{
+			if (!this._cPresenter.ItemValid ()) {
+				//this.Destroy ();
+			}
+		}
+
 		#region Interface Assignment
 		public string OrderList {
 			get{
@@ -50,6 +57,8 @@ namespace ss_backend_assess
 				btnSubmitCoupon.Visible = value;
 			}
 		}
+
+
 
 
 		#endregion

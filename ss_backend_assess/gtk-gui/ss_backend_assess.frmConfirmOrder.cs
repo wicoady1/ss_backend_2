@@ -132,6 +132,7 @@ namespace ss_backend_assess
 			this.DefaultHeight = 300;
 			this.Show ();
 			this.btnSubmitCoupon.Clicked += new global::System.EventHandler (this.OnBtnSubmitCouponClicked);
+			this.btnGoPayment.Clicked += new global::System.EventHandler (this.OnBtnGoPaymentClicked);
 		}
 	}
 }

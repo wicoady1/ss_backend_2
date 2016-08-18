@@ -101,6 +101,12 @@
     <Compile Include="Interface\IConfirmOrder.cs" />
     <Compile Include="Model\ConfirmOrderModel.cs" />
     <Compile Include="Presenter\ConfirmOrderPresenter.cs" />
+    <Compile Include="Interface\IPaymentInput.cs" />
+    <Compile Include="Model\PaymentInputModel.cs" />
+    <Compile Include="Presenter\PaymentInputPresenter.cs" />
+    <Compile Include="Interface\IPaymentRequest.cs" />
+    <Compile Include="Model\PaymentRequestModel.cs" />
+    <Compile Include="Presenter\PaymentRequestPresenter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

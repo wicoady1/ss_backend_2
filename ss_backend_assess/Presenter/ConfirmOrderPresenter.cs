@@ -58,6 +58,37 @@ namespace ss_backend_assess.Presenter
 			_iConOrder.OrderList = strTotalOrder;
 		}
 			
+		//--- check if the Items are still available on warehouse
+		public bool ItemValid(){
+			int intStorageQty = 0;
+			string strWarningMsg = "";
+
+			for (int i = 0; i < ss_backend_assess.Commons.Cart.strItemCode.Length; i++) {
+				
+				if (ss_backend_assess.Commons.Cart.strItemCode [i] == null) {
+
+					break;
+				} else {
+					
+					intStorageQty = _cConOrderModel.CheckItemStock (ss_backend_assess.Commons.Cart.strItemCode [i]);
+
+					if (ss_backend_assess.Commons.Cart.strItemQty [i] > intStorageQty) {
+						strWarningMsg = "You can't proceed the order because " +
+								ss_backend_assess.Commons.Cart.strItemDesc [i] +
+								" has insufficient stocks in Warehouse.\n Please Order Different Product...";
+
+						MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, strWarningMsg);
+						md.Run();
+						md.Destroy();
+
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
+
 		//--- use Coupon
 		public void UseCoupon(){
 			int intNewGrandTotal = 0;
@@ -142,10 +173,6 @@ namespace ss_backend_assess.Presenter
 			}
 
 			return true;
-		}
-
-		public void ItemValid(){
-			
 		}
 
 	}
