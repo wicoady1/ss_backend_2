@@ -28,6 +28,7 @@ public partial class MainWindow: Gtk.Window, ss_backend_assess.Interface.ILogin
 		//throw new NotImplementedException ();
 		if (intErr == 0) {
 			new ss_backend_assess.frmMainUser ();
+			ss_backend_assess.Commons.Cart.RefreshSession ();
 		}
 	}
 

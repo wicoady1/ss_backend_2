@@ -12,13 +12,13 @@ namespace ss_backend_assess
 		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		
-		private global::Gtk.TextView textview1;
+		private global::Gtk.TextView txtOrderList;
 		
 		private global::Gtk.HBox hbox11;
 		
 		private global::Gtk.Label label10;
 		
-		private global::Gtk.Entry entry7;
+		private global::Gtk.Entry txtCoupon;
 		
 		private global::Gtk.Button btnSubmitCoupon;
 		
@@ -55,11 +55,11 @@ namespace ss_backend_assess
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.textview1 = new global::Gtk.TextView ();
-			this.textview1.CanFocus = true;
-			this.textview1.Name = "textview1";
-			this.textview1.Editable = false;
-			this.GtkScrolledWindow.Add (this.textview1);
+			this.txtOrderList = new global::Gtk.TextView ();
+			this.txtOrderList.CanFocus = true;
+			this.txtOrderList.Name = "textview1";
+			this.txtOrderList.Editable = false;
+			this.GtkScrolledWindow.Add (this.txtOrderList);
 			this.vbox8.Add (this.GtkScrolledWindow);
 			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.GtkScrolledWindow]));
 			w3.Position = 0;
@@ -77,13 +77,13 @@ namespace ss_backend_assess
 			w4.Expand = false;
 			w4.Fill = false;
 			// Container child hbox11.Gtk.Box+BoxChild
-			this.entry7 = new global::Gtk.Entry ();
-			this.entry7.CanFocus = true;
-			this.entry7.Name = "entry7";
-			this.entry7.IsEditable = true;
-			this.entry7.InvisibleChar = '•';
-			this.hbox11.Add (this.entry7);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox11 [this.entry7]));
+			this.txtCoupon = new global::Gtk.Entry ();
+			this.txtCoupon.CanFocus = true;
+			this.txtCoupon.Name = "entry7";
+			this.txtCoupon.IsEditable = true;
+			this.txtCoupon.InvisibleChar = '•';
+			this.hbox11.Add (this.txtCoupon);
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox11 [this.txtCoupon]));
 			w5.Position = 1;
 			// Container child hbox11.Gtk.Box+BoxChild
 			this.btnSubmitCoupon = new global::Gtk.Button ();

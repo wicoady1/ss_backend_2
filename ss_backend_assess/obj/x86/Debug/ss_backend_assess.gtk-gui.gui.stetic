@@ -383,6 +383,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Add to Cart</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnBtnCosAddClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -419,12 +420,13 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.Button" id="button7">
+                      <widget class="Gtk.Button" id="btnMascara">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Add to Cart</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnBtnMascaraClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -461,12 +463,13 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.Button" id="button8">
+                      <widget class="Gtk.Button" id="btnConditioner">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Add to Cart</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnBtnConditionerClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>

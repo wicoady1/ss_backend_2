@@ -15,13 +15,13 @@ namespace ss_backend_assess.Commons
 	{
 		public static string[] strItemCode;
 		public static string[] strItemDesc;
-		public static string[] strItemQty;
+		public static int[] strItemQty;
 
 		public static void RefreshSession()
 		{
 			strItemCode = new string[100];
 			strItemDesc = new string[100];
-			strItemQty = new string[100];
+			strItemQty = new int[100];
 		}
 
 	}

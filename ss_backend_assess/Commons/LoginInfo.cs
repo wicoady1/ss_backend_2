@@ -17,7 +17,7 @@ namespace ss_backend_assess.Commons
 
 		public static void RefreshSession ()
 		{
-			this.LoginID = "";
+			LoginID = "";
 		}
 	}
 }

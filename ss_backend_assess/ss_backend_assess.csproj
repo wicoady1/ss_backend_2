@@ -94,6 +94,12 @@
     <Compile Include="frmCheckOrderStatus.cs" />
     <Compile Include="Commons\LoginInfo.cs" />
     <Compile Include="Commons\Cart.cs" />
+    <Compile Include="Interface\IMainUser.cs" />
+    <Compile Include="Model\MainUserModel.cs" />
+    <Compile Include="Presenter\MainUserPresenter.cs" />
+    <Compile Include="Interface\IConfirmOrder.cs" />
+    <Compile Include="Model\ConfirmOrderModel.cs" />
+    <Compile Include="Presenter\ConfirmOrderPresenter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

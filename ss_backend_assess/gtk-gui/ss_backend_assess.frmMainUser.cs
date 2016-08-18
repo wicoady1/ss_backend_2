@@ -58,13 +58,13 @@ namespace ss_backend_assess
 		
 		private global::Gtk.Entry txtMasQty;
 		
-		private global::Gtk.Button button7;
+		private global::Gtk.Button btnMascara;
 		
 		private global::Gtk.HBox hbox9;
 		
 		private global::Gtk.Entry txtConQty;
 		
-		private global::Gtk.Button button8;
+		private global::Gtk.Button btnConditioner;
 		
 		private global::Gtk.Fixed fixed11;
 		
@@ -287,13 +287,13 @@ namespace ss_backend_assess
 			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.txtMasQty]));
 			w23.Position = 0;
 			// Container child hbox8.Gtk.Box+BoxChild
-			this.button7 = new global::Gtk.Button ();
-			this.button7.CanFocus = true;
-			this.button7.Name = "button7";
-			this.button7.UseUnderline = true;
-			this.button7.Label = global::Mono.Unix.Catalog.GetString ("Add to Cart");
-			this.hbox8.Add (this.button7);
-			global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.button7]));
+			this.btnMascara = new global::Gtk.Button ();
+			this.btnMascara.CanFocus = true;
+			this.btnMascara.Name = "btnMascara";
+			this.btnMascara.UseUnderline = true;
+			this.btnMascara.Label = global::Mono.Unix.Catalog.GetString ("Add to Cart");
+			this.hbox8.Add (this.btnMascara);
+			global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.btnMascara]));
 			w24.Position = 1;
 			w24.Expand = false;
 			w24.Fill = false;
@@ -316,13 +316,13 @@ namespace ss_backend_assess
 			global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.txtConQty]));
 			w26.Position = 0;
 			// Container child hbox9.Gtk.Box+BoxChild
-			this.button8 = new global::Gtk.Button ();
-			this.button8.CanFocus = true;
-			this.button8.Name = "button8";
-			this.button8.UseUnderline = true;
-			this.button8.Label = global::Mono.Unix.Catalog.GetString ("Add to Cart");
-			this.hbox9.Add (this.button8);
-			global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.button8]));
+			this.btnConditioner = new global::Gtk.Button ();
+			this.btnConditioner.CanFocus = true;
+			this.btnConditioner.Name = "btnConditioner";
+			this.btnConditioner.UseUnderline = true;
+			this.btnConditioner.Label = global::Mono.Unix.Catalog.GetString ("Add to Cart");
+			this.hbox9.Add (this.btnConditioner);
+			global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.btnConditioner]));
 			w27.Position = 1;
 			w27.Expand = false;
 			w27.Fill = false;
@@ -373,6 +373,9 @@ namespace ss_backend_assess
 			this.DefaultWidth = 649;
 			this.DefaultHeight = 464;
 			this.Show ();
+			this.btnCosAdd.Clicked += new global::System.EventHandler (this.OnBtnCosAddClicked);
+			this.btnMascara.Clicked += new global::System.EventHandler (this.OnBtnMascaraClicked);
+			this.btnConditioner.Clicked += new global::System.EventHandler (this.OnBtnConditionerClicked);
 		}
 	}
 }
