@@ -74,11 +74,32 @@
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="MainWindow.cs" />
+    <Compile Include="frmMainUser.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmMainUser.cs" />
+    <Compile Include="frmConfirmOrder.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmConfirmOrder.cs" />
+    <Compile Include="frmPaymentInput.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmPaymentInput.cs" />
+    <Compile Include="frmPaymentRequest.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmPaymentRequest.cs" />
+    <Compile Include="frmAdminMain.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmAdminMain.cs" />
+    <Compile Include="frmAdminOrderDetail.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmAdminOrderDetail.cs" />
+    <Compile Include="frmAdminProcessShip.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmAdminProcessShip.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmCheckOrderStatus.cs" />
+    <Compile Include="frmCheckOrderStats.cs" />
+    <Compile Include="gtk-gui\ss_backend_assess.frmCheckOrderStats.cs" />
+    <Compile Include="frmCheckOrderStatus.cs" />
+    <Compile Include="Commons\LoginInfo.cs" />
+    <Compile Include="Commons\Cart.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Interface\" />
     <Folder Include="Presenter\" />
     <Folder Include="Model\" />
+    <Folder Include="Commons\" />
   </ItemGroup>
 </Project>

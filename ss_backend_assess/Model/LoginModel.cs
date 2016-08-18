@@ -37,7 +37,13 @@ namespace ss_backend_assess.Model
 				md.Run ();
 				md.Destroy ();
 
-				intReturnValue = 0;
+				if (strID == "user") {
+					intReturnValue = 0;
+				}else if (strID == "admin"){
+					intReturnValue = 2;
+				}
+
+				//intReturnValue = 0;
 			} else {
 				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Login Failed!");
 				md.Run();

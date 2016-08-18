@@ -26,6 +26,9 @@ public partial class MainWindow: Gtk.Window, ss_backend_assess.Interface.ILogin
 		int intErr = 1;
 		intErr = this._cPresenter.LoginVerifier ();
 		//throw new NotImplementedException ();
+		if (intErr == 0) {
+			new ss_backend_assess.frmMainUser ();
+		}
 	}
 
 	#region Interface Assignment

@@ -54,18 +54,20 @@ public partial class MainWindow
 		w2.Position = 0;
 		w2.Expand = false;
 		w2.Fill = false;
-		// Container child hbox1.Gtk.Box+BoxChild
+		this.vbox1.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+		w3.Position = 1;
+		w3.Expand = false;
+		w3.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
 		this.txtID = new global::Gtk.Entry ();
 		this.txtID.CanFocus = true;
 		this.txtID.Name = "txtID";
 		this.txtID.IsEditable = true;
 		this.txtID.InvisibleChar = '•';
-		this.hbox1.Add (this.txtID);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.txtID]));
-		w3.Position = 1;
-		this.vbox1.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
-		w4.Position = 1;
+		this.vbox1.Add (this.txtID);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.txtID]));
+		w4.Position = 2;
 		w4.Expand = false;
 		w4.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
@@ -81,18 +83,20 @@ public partial class MainWindow
 		w5.Position = 0;
 		w5.Expand = false;
 		w5.Fill = false;
-		// Container child hbox2.Gtk.Box+BoxChild
+		this.vbox1.Add (this.hbox2);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
+		w6.Position = 3;
+		w6.Expand = false;
+		w6.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
 		this.txtPass = new global::Gtk.Entry ();
 		this.txtPass.CanFocus = true;
 		this.txtPass.Name = "txtPass";
 		this.txtPass.IsEditable = true;
 		this.txtPass.InvisibleChar = '•';
-		this.hbox2.Add (this.txtPass);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.txtPass]));
-		w6.Position = 1;
-		this.vbox1.Add (this.hbox2);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
-		w7.Position = 2;
+		this.vbox1.Add (this.txtPass);
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.txtPass]));
+		w7.Position = 4;
 		w7.Expand = false;
 		w7.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
@@ -103,7 +107,7 @@ public partial class MainWindow
 		this.btnLogin.Label = global::Mono.Unix.Catalog.GetString ("Login");
 		this.vbox1.Add (this.btnLogin);
 		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.btnLogin]));
-		w8.Position = 3;
+		w8.Position = 5;
 		w8.Expand = false;
 		w8.Fill = false;
 		this.Add (this.vbox1);
