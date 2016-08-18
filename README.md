@@ -9,3 +9,6 @@ Login Form + DB File for SQLite
 # 20160818_v0003
 All Menu Front-ends (GUI) | Commons Folder --> Class as Session Variables
 
+# 20160818_v0004
+User Side Menu Development (frmMainUser, frmConfirmOrder)
+
