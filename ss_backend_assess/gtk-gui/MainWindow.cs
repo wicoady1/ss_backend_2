@@ -5,11 +5,21 @@ public partial class MainWindow
 {
 	private global::Gtk.VBox vbox1;
 	
+	private global::Gtk.Label label4;
+	
 	private global::Gtk.HBox hbox1;
 	
-	private global::Gtk.Label lblTest;
+	private global::Gtk.Label label2;
 	
-	private global::Gtk.Button btnTest;
+	private global::Gtk.Entry txtID;
+	
+	private global::Gtk.HBox hbox2;
+	
+	private global::Gtk.Label label3;
+	
+	private global::Gtk.Entry txtPass;
+	
+	private global::Gtk.Button btnLogin;
 
 	protected virtual void Build ()
 	{
@@ -23,34 +33,79 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
+		this.label4 = new global::Gtk.Label ();
+		this.label4.Name = "label4";
+		this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("Please Login");
+		this.vbox1.Add (this.label4);
+		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.label4]));
+		w1.Position = 0;
+		w1.Expand = false;
+		w1.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
 		this.hbox1 = new global::Gtk.HBox ();
 		this.hbox1.Name = "hbox1";
 		this.hbox1.Spacing = 6;
 		// Container child hbox1.Gtk.Box+BoxChild
-		this.lblTest = new global::Gtk.Label ();
-		this.lblTest.Name = "lblTest";
-		this.lblTest.LabelProp = global::Mono.Unix.Catalog.GetString ("label1");
-		this.hbox1.Add (this.lblTest);
-		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.lblTest]));
-		w1.Position = 1;
-		w1.Expand = false;
-		w1.Fill = false;
-		this.vbox1.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+		this.label2 = new global::Gtk.Label ();
+		this.label2.Name = "label2";
+		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("ID");
+		this.hbox1.Add (this.label2);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.label2]));
 		w2.Position = 0;
 		w2.Expand = false;
 		w2.Fill = false;
-		// Container child vbox1.Gtk.Box+BoxChild
-		this.btnTest = new global::Gtk.Button ();
-		this.btnTest.CanFocus = true;
-		this.btnTest.Name = "btnTest";
-		this.btnTest.UseUnderline = true;
-		this.btnTest.Label = global::Mono.Unix.Catalog.GetString ("Test Click");
-		this.vbox1.Add (this.btnTest);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.btnTest]));
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.txtID = new global::Gtk.Entry ();
+		this.txtID.CanFocus = true;
+		this.txtID.Name = "txtID";
+		this.txtID.IsEditable = true;
+		this.txtID.InvisibleChar = '•';
+		this.hbox1.Add (this.txtID);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.txtID]));
 		w3.Position = 1;
-		w3.Expand = false;
-		w3.Fill = false;
+		this.vbox1.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+		w4.Position = 1;
+		w4.Expand = false;
+		w4.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.hbox2 = new global::Gtk.HBox ();
+		this.hbox2.Name = "hbox2";
+		this.hbox2.Spacing = 6;
+		// Container child hbox2.Gtk.Box+BoxChild
+		this.label3 = new global::Gtk.Label ();
+		this.label3.Name = "label3";
+		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("Password");
+		this.hbox2.Add (this.label3);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label3]));
+		w5.Position = 0;
+		w5.Expand = false;
+		w5.Fill = false;
+		// Container child hbox2.Gtk.Box+BoxChild
+		this.txtPass = new global::Gtk.Entry ();
+		this.txtPass.CanFocus = true;
+		this.txtPass.Name = "txtPass";
+		this.txtPass.IsEditable = true;
+		this.txtPass.InvisibleChar = '•';
+		this.hbox2.Add (this.txtPass);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.txtPass]));
+		w6.Position = 1;
+		this.vbox1.Add (this.hbox2);
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
+		w7.Position = 2;
+		w7.Expand = false;
+		w7.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.btnLogin = new global::Gtk.Button ();
+		this.btnLogin.CanFocus = true;
+		this.btnLogin.Name = "btnLogin";
+		this.btnLogin.UseUnderline = true;
+		this.btnLogin.Label = global::Mono.Unix.Catalog.GetString ("Login");
+		this.vbox1.Add (this.btnLogin);
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.btnLogin]));
+		w8.Position = 3;
+		w8.Expand = false;
+		w8.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
@@ -59,6 +114,6 @@ public partial class MainWindow
 		this.DefaultHeight = 466;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-		this.btnTest.Clicked += new global::System.EventHandler (this.OnBtnTestClicked);
+		this.btnLogin.Clicked += new global::System.EventHandler (this.OnBtnLoginClicked);
 	}
 }

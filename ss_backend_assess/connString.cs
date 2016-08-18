@@ -37,9 +37,9 @@ namespace ss_backend_assess
 				sqlConn = new SqliteConnection(strConnString);
 				sqlConn.Open();
 
-				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Success");
-				md.Run();
-				md.Destroy();
+				//MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Success");
+				//md.Run();
+				//md.Destroy();
 			}
 			catch (SqliteException ex)
 			{

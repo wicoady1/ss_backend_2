@@ -1,11 +1,18 @@
 ﻿using System;
 using Gtk;
+using ss_backend_assess;
 
-public partial class MainWindow: Gtk.Window
+public partial class MainWindow: Gtk.Window, ss_backend_assess.Interface.ILogin
 {
+	private connString _connStr;
+	private ss_backend_assess.Presenter.LoginPresenter _cPresenter;
+
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
+
+		this._connStr = new connString ();
+		this._cPresenter = new ss_backend_assess.Presenter.LoginPresenter (this, _connStr);
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -14,12 +21,31 @@ public partial class MainWindow: Gtk.Window
 		a.RetVal = true;
 	}
 
-	protected void OnBtnTestClicked (object sender, EventArgs e)
+	protected void OnBtnLoginClicked (object sender, EventArgs e)
 	{
-		lblTest.LabelProp = "test";
-		btnTest.Label = "apa aja boleh";
+		int intErr = 1;
+		intErr = this._cPresenter.LoginVerifier ();
 		//throw new NotImplementedException ();
-
-		ss_backend_assess.connString connStr = new ss_backend_assess.connString ();
 	}
+
+	#region Interface Assignment
+	public string ID{
+		set{
+			txtID.Text = value;
+		}
+		get{
+			return txtID.Text;
+		}
+	}
+	public string Password{
+		set{
+			txtPass.Text = value;
+		}
+		get{
+			return txtPass.Text;
+		}
+	}
+
+
+	#endregion
 }
