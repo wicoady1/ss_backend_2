@@ -107,6 +107,15 @@
     <Compile Include="Interface\IPaymentRequest.cs" />
     <Compile Include="Model\PaymentRequestModel.cs" />
     <Compile Include="Presenter\PaymentRequestPresenter.cs" />
+    <Compile Include="Interface\IAdminMain.cs" />
+    <Compile Include="Interface\IAdminOrderDetail.cs" />
+    <Compile Include="Interface\IAdminProcessShip.cs" />
+    <Compile Include="Model\AdminMainModel.cs" />
+    <Compile Include="Model\AdminOrderDetailModel.cs" />
+    <Compile Include="Model\AdminProcessShipModel.cs" />
+    <Compile Include="Presenter\AdminMainPresenter.cs" />
+    <Compile Include="Presenter\AdminOrderDetailPresenter.cs" />
+    <Compile Include="Presenter\AdminProcessShipPresenter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
