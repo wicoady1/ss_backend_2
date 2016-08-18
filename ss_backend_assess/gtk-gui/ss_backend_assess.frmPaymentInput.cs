@@ -201,6 +201,7 @@ namespace ss_backend_assess
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 330;
 			this.Show ();
+			this.btnProceed.Clicked += new global::System.EventHandler (this.OnBtnProceedClicked);
 		}
 	}
 }

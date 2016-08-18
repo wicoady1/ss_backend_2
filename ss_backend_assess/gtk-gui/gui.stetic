@@ -903,6 +903,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Continue</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnProceedClicked" />
           </widget>
           <packing>
             <property name="Position">10</property>
@@ -999,7 +1000,7 @@ a.n. Test Test Test</property>
                         <property name="MemberName" />
                         <property name="Spacing">6</property>
                         <child>
-                          <widget class="Gtk.Image" id="image1">
+                          <widget class="Gtk.Image" id="imgPayProof">
                             <property name="MemberName" />
                           </widget>
                           <packing>
@@ -1015,6 +1016,7 @@ a.n. Test Test Test</property>
                             <property name="Type">TextOnly</property>
                             <property name="Label" translatable="yes">Upload</property>
                             <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="OnBtnProofUploadClicked" />
                           </widget>
                           <packing>
                             <property name="Position">1</property>
@@ -1052,6 +1054,7 @@ a.n. Test Test Test</property>
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">Finalize Order!</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnFinalizeClicked" />
               </widget>
               <packing>
                 <property name="Position">1</property>

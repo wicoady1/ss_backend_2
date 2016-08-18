@@ -16,6 +16,7 @@ namespace ss_backend_assess.Interface
 
 		bool DisableCouponField {
 			set;
+			get;
 		}
 	}
 }

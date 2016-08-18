@@ -16,12 +16,18 @@ namespace ss_backend_assess.Commons
 		public static string[] strItemCode;
 		public static string[] strItemDesc;
 		public static int[] strItemQty;
+		public static string strCoupon;
+		public static string strOrderID;
+		public static string strGrandTotal;
 
 		public static void RefreshSession()
 		{
 			strItemCode = new string[100];
 			strItemDesc = new string[100];
 			strItemQty = new int[100];
+			strCoupon = "";
+			strOrderID = "";
+			strGrandTotal = "";
 		}
 
 	}

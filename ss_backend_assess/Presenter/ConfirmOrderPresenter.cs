@@ -88,6 +88,25 @@ namespace ss_backend_assess.Presenter
 			return true;
 		}
 
+		//--- Process and Submit Order by cutting the stock of coupon and products
+		public void SubmitOrder(){
+
+			//--- Cut Item Stock
+			for (int i = 0; i < ss_backend_assess.Commons.Cart.strItemCode.Length; i++) {
+				if (ss_backend_assess.Commons.Cart.strItemCode [i] == null) {
+					break;
+				} else {
+
+					_cConOrderModel.CutItemStock (ss_backend_assess.Commons.Cart.strItemCode [i],
+						ss_backend_assess.Commons.Cart.strItemQty [i]);
+				}
+			}
+
+			//--- Cut Coupon Stock
+			if (_iConOrder.DisableCouponField == false) {
+				_cConOrderModel.CutCouponStock (_iConOrder.CouponCode);
+			}
+		}
 
 		//--- use Coupon
 		public void UseCoupon(){

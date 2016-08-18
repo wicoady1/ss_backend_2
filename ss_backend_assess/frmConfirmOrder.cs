@@ -29,6 +29,10 @@ namespace ss_backend_assess
 		{
 			if (!this._cPresenter.ItemValid ()) {
 				//this.Destroy ();
+			} else {
+				_cPresenter.SubmitOrder ();
+
+				new frmPaymentInput ();
 			}
 		}
 
@@ -56,10 +60,10 @@ namespace ss_backend_assess
 				txtCoupon.IsEditable = value;
 				btnSubmitCoupon.Visible = value;
 			}
+			get{
+				return btnSubmitCoupon.Visible;
+			}
 		}
-
-
-
 
 		#endregion
 	}

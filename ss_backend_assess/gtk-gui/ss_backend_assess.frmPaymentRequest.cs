@@ -26,7 +26,7 @@ namespace ss_backend_assess
 		
 		private global::Gtk.HBox hbox18;
 		
-		private global::Gtk.Image image1;
+		private global::Gtk.Image imgPayProof;
 		
 		private global::Gtk.Button btnProofUpload;
 		
@@ -100,10 +100,10 @@ namespace ss_backend_assess
 			this.hbox18.Name = "hbox18";
 			this.hbox18.Spacing = 6;
 			// Container child hbox18.Gtk.Box+BoxChild
-			this.image1 = new global::Gtk.Image ();
-			this.image1.Name = "image1";
-			this.hbox18.Add (this.image1);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox18 [this.image1]));
+			this.imgPayProof = new global::Gtk.Image ();
+			this.imgPayProof.Name = "imgPayProof";
+			this.hbox18.Add (this.imgPayProof);
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox18 [this.imgPayProof]));
 			w6.Position = 0;
 			w6.Fill = false;
 			// Container child hbox18.Gtk.Box+BoxChild
@@ -152,6 +152,8 @@ namespace ss_backend_assess
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show ();
+			this.btnProofUpload.Clicked += new global::System.EventHandler (this.OnBtnProofUploadClicked);
+			this.btnFinalize.Clicked += new global::System.EventHandler (this.OnBtnFinalizeClicked);
 		}
 	}
 }
