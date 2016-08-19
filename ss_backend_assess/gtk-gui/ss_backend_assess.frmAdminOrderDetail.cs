@@ -235,6 +235,8 @@ namespace ss_backend_assess
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 447;
 			this.Show ();
+			this.btnApprove.Clicked += new global::System.EventHandler (this.OnBtnApproveClicked);
+			this.btnReject.Clicked += new global::System.EventHandler (this.OnBtnRejectClicked);
 		}
 	}
 }

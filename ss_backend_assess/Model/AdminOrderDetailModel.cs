@@ -4,11 +4,11 @@ using Mono.Data.Sqlite;
 
 namespace ss_backend_assess.Model
 {
-	public class AdminOrderDetail
+	public class AdminOrderDetailModel
 	{
 		private ss_backend_assess.connString _conn;
 
-		public AdminOrderDetail (connString conn)
+		public AdminOrderDetailModel (connString conn)
 		{
 			this._conn = new connString ();
 			this._conn = conn;

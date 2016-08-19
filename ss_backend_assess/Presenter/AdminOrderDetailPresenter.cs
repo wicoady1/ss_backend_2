@@ -6,14 +6,14 @@ namespace ss_backend_assess.Presenter
 	public class AdminOrderDetailPresenter
 	{
 		private ss_backend_assess.Interface.IAdminOrderDetail _iAdminDet;
-		private ss_backend_assess.Model.AdminOrderDetail _cAdminDetModel;
+		private ss_backend_assess.Model.AdminOrderDetailModel _cAdminDetModel;
 
 		private string strOrderID;
 
 		public AdminOrderDetailPresenter (ss_backend_assess.Interface.IAdminOrderDetail iAdmin, connString conStr)
 		{
 			this._iAdminDet = iAdmin;
-			this._cAdminDetModel = new Model.AdminOrderDetail (conStr);
+			this._cAdminDetModel = new Model.AdminOrderDetailModel (conStr);
 		}
 
 		//--- Load All Order Master and Detail
@@ -57,6 +57,9 @@ namespace ss_backend_assess.Presenter
 		}
 
 		//--- Update Approval Status
+		public void UpdateOrderApproval(string strOrderID, string strCondition){
+			_cAdminDetModel.UpdateApprovalFlag (strOrderID, strCondition);
+		}
 	}
 }
 

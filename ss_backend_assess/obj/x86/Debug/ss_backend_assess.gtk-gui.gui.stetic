@@ -1367,6 +1367,7 @@ a.n. Test Test Test</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Approve (Proceed to Shipment)</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnBtnApproveClicked" />
                   </widget>
                   <packing>
                     <property name="Position">0</property>
@@ -1382,6 +1383,7 @@ a.n. Test Test Test</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Cancel (Reject Order)</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnBtnRejectClicked" />
                   </widget>
                   <packing>
                     <property name="Position">1</property>
@@ -1434,10 +1436,11 @@ a.n. Test Test Test</property>
             <property name="MemberName" />
             <property name="ShadowType">In</property>
             <child>
-              <widget class="Gtk.NodeView" id="nodeListBarang">
+              <widget class="Gtk.TextView" id="txtListBarang">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
               </widget>
             </child>
           </widget>
@@ -1500,6 +1503,7 @@ a.n. Test Test Test</property>
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">Update to Shipped!</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnUpdateShipClicked" />
               </widget>
               <packing>
                 <property name="Position">3</property>

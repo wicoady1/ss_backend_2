@@ -10,7 +10,7 @@ namespace ss_backend_assess
 		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		
-		private global::Gtk.NodeView nodeListBarang;
+		private global::Gtk.TextView txtListBarang;
 		
 		private global::Gtk.VBox vbox8;
 		
@@ -47,10 +47,10 @@ namespace ss_backend_assess
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.nodeListBarang = new global::Gtk.NodeView ();
-			this.nodeListBarang.CanFocus = true;
-			this.nodeListBarang.Name = "nodeListBarang";
-			this.GtkScrolledWindow.Add (this.nodeListBarang);
+			this.txtListBarang = new global::Gtk.TextView ();
+			this.txtListBarang.CanFocus = true;
+			this.txtListBarang.Name = "txtListBarang";
+			this.GtkScrolledWindow.Add (this.txtListBarang);
 			this.vbox7.Add (this.GtkScrolledWindow);
 			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.GtkScrolledWindow]));
 			w3.Position = 1;
@@ -114,6 +114,7 @@ namespace ss_backend_assess
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show ();
+			this.btnUpdateShip.Clicked += new global::System.EventHandler (this.OnBtnUpdateShipClicked);
 		}
 	}
 }

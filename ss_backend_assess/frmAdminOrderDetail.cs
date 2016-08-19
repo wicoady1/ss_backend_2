@@ -1,4 +1,5 @@
 ﻿using System;
+using Gtk;
 
 namespace ss_backend_assess
 {
@@ -16,6 +17,25 @@ namespace ss_backend_assess
 			this._cPresenter = new ss_backend_assess.Presenter.AdminOrderDetailPresenter (this, _connStr);
 
 			this._cPresenter.LoadOrderInfo (ss_backend_assess.Commons.AdminSession.strOrderID);
+		}
+
+		protected void OnBtnApproveClicked (object sender, EventArgs e)
+		{
+			_cPresenter.UpdateOrderApproval (ss_backend_assess.Commons.AdminSession.strOrderID, "Y");
+			MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Order has Accepted! Proceeding to Shipment...");
+			md.Run();
+			md.Destroy();
+
+			new frmAdminProcessShip ();
+		}
+
+		protected void OnBtnRejectClicked (object sender, EventArgs e)
+		{
+			_cPresenter.UpdateOrderApproval (ss_backend_assess.Commons.AdminSession.strOrderID, "N");
+
+			MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Order has Cancelled! Returning to main menu!");
+			md.Run();
+			md.Destroy();
 		}
 
 		#region Interface Assignment
@@ -74,6 +94,8 @@ namespace ss_backend_assess
 				imgPayProof.Pixbuf = value;
 			}
 		}
+
+
 		#endregion
 	}
 }
