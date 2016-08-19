@@ -60,6 +60,8 @@ namespace ss_backend_assess.Presenter
 		//--- Update Database for new Image + Pay Proof Flag
 		public void UpdatePaymentStatus(string strImageFile){
 			_cPayReqModel.PaymentProofUpdate (strImageFile, ss_backend_assess.Commons.Cart.strOrderID);
+
+			MessageBox.ShowMsg ("Order has been submitted as Order ID: " + ss_backend_assess.Commons.Cart.strOrderID);
 		}
 	}
 }

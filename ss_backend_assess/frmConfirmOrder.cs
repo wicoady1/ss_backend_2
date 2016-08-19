@@ -28,11 +28,13 @@ namespace ss_backend_assess
 		protected void OnBtnGoPaymentClicked (object sender, EventArgs e)
 		{
 			if (!this._cPresenter.ItemValid ()) {
-				//this.Destroy ();
+				new frmMainUser ();
+				this.Destroy ();
 			} else {
 				_cPresenter.SubmitOrder ();
 
 				new frmPaymentInput ();
+				this.Destroy ();
 			}
 		}
 

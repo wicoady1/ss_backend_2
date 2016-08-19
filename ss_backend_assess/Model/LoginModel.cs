@@ -10,6 +10,7 @@
 using System;
 using Mono.Data.Sqlite;
 using Gtk;
+using System.Data;
 
 namespace ss_backend_assess.Model
 {
@@ -23,38 +24,36 @@ namespace ss_backend_assess.Model
 			this._conn = conn;
 		}
 
-		//--to verify login
-		public int VerifyLogin(string strID, string strPassword){
-			int intReturnValue = -1;
-			string strQuery = "select * from tblLogin where ID = '" + strID + "' and Pass = '" + strPassword + "'";
 
-			_conn.sqlConn.Open ();
-			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
+		//--- to verify login
+		public string VerifyLogin(string strID, string strPassword){
+			string strQuery = 
+				"select case  when UserType = 'A' then 1 when UserType = 'U' then 2 end as UserType " +
+				"from tblLogin where ID = '" + strID + "' and Pass = '" + strPassword + "'";
+			int intResult = 0;
 
-			if (_conn.sqlReader.HasRows) {
-				MessageDialog md = new MessageDialog (null, DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Login Success!");
-				md.Run ();
-				md.Destroy ();
+			DataSet dsResult = new DataSet ();
 
-				if (strID == "user") {
-					intReturnValue = 0;
-				}else if (strID == "admin"){
-					intReturnValue = 2;
-				}
+			try{
+				_conn.sqlConn.Open ();
+				_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
+				//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
+				_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
+				dsResult.Reset ();
+				_conn.sqlDataAdapter.Fill (dsResult);
+				_conn.sqlConn.Close ();
 
-				//intReturnValue = 0;
-			} else {
-				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Login Failed!");
-				md.Run();
-				md.Destroy();
+				intResult = Convert.ToInt32( dsResult.Tables [0].Rows[0]["UserType"].ToString());
 
-				intReturnValue = 1;
+				if (intResult == 1)
+					return "A";
+				if (intResult == 2)
+					return "U";
 			}
-
-			_conn.sqlConn.Close ();
-
-			return intReturnValue;
+			catch{
+				return "";
+			}
+			return "";
 		}
 	}
 }

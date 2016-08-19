@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Login - Main Menu
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using Gtk;
 using ss_backend_assess;
 
@@ -25,14 +34,17 @@ public partial class MainWindow: Gtk.Window, ss_backend_assess.Interface.ILogin
 	{
 		int intErr = 1;
 		intErr = this._cPresenter.LoginVerifier ();
-		//throw new NotImplementedException ();
+
 		if (intErr == 0) {
 			new ss_backend_assess.frmMainUser ();
 			ss_backend_assess.Commons.Cart.RefreshSession ();
+
+			this.Destroy ();
 		} else if (intErr == 2){
-			//new ss_backend_assess.frmAdminMain ();
 			new ss_backend_assess.frmAdminOrderList();
 			ss_backend_assess.Commons.Cart.RefreshSession ();
+
+			this.Destroy ();
 		}
 	}
 

@@ -129,6 +129,7 @@
     <Compile Include="Interface\IUserShipCheck.cs" />
     <Compile Include="frmUserShipCheck.cs" />
     <Compile Include="gtk-gui\ss_backend_assess.frmUserShipCheck.cs" />
+    <Compile Include="Commons\MessageBox.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

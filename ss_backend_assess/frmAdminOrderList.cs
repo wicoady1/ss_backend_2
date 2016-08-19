@@ -14,6 +14,7 @@ namespace ss_backend_assess
 		private Gtk.Label dummyLabel;
 		private Gtk.TreeView orderList;
 		private Gtk.Button btnProcess;
+		private Gtk.Button btnLogout;
 
 		private string strSelectedOrderID;
 
@@ -52,10 +53,17 @@ namespace ss_backend_assess
 			//--- ADD Button Clicked Action
 			btnProcess.Clicked += new EventHandler(OnBtnProcessClicked);
 
+			//--- ADD Button: Logout
+			btnLogout = new Gtk.Button ("LogOut!");
+
+			//--- ADD Button Clicked Action
+			btnLogout.Clicked += new EventHandler(OnBtnLogoutClicked);
+
 			//--- Put Together in VBox
 			mainVBox.PackStart (dummyLabel, false, false, 5);
 			mainVBox.PackStart (orderList, true, true, 5);
 			mainVBox.PackStart (btnProcess, false, false, 5);
+			mainVBox.PackStart (btnLogout, false, false, 5);
 
 			window.Add (mainVBox);
 
@@ -63,49 +71,26 @@ namespace ss_backend_assess
 			window.ShowAll ();
 		}
 
-		private void InitializeTree(){
-
-			// Create a column for the artist name
-			Gtk.TreeViewColumn orderNo = new Gtk.TreeViewColumn ();
-			orderNo.Title = "Order No";
-
-			// Create a column for the song title
-			Gtk.TreeViewColumn custName = new Gtk.TreeViewColumn ();
-			custName.Title = "Customer Name";
-
-			// Add the columns to the TreeView
-			orderList.AppendColumn (orderNo);
-			orderList.AppendColumn (custName);
-
-			// Create a model that will hold two strings - Artist Name and Song Title
-			Gtk.ListStore orderListStore = new Gtk.ListStore (typeof (string), typeof (string));
-
-			// Add some data to the store
-			orderListStore.AppendValues ("Garbage", "Dog New Tricks");
-			orderListStore.AppendValues ("Garbage 2", "Dog New Tricks 2");
-
-			// Create the text cell that will display the artist name
-			Gtk.CellRendererText artistNameCell = new Gtk.CellRendererText ();
-
-			// Add the cell to the column
-			orderNo.PackStart (artistNameCell, true);
-
-			// Do the same for the song title column
-			Gtk.CellRendererText songTitleCell = new Gtk.CellRendererText ();
-			custName.PackStart (songTitleCell, true);
-
-			// Tell the Cell Renderers which items in the model to display
-			orderNo.AddAttribute (artistNameCell, "text", 0);
-			custName.AddAttribute (songTitleCell, "text", 1);
-
-			// Assign the model to the TreeView
-			orderList.Model = orderListStore;
-		}
 
 		private void OnBtnProcessClicked (object sender, EventArgs e)
 		{
-			new frmAdminOrderDetail ();
+			if (ss_backend_assess.Commons.AdminSession.strOrderID == "" || ss_backend_assess.Commons.AdminSession.strOrderID == null) {
+				MessageBox.ShowMsg ("Please Choose an Order to Process...");
+			} else {
+				new frmAdminOrderDetail ();
+				window.Destroy ();
+			}
 		}
+
+		private void OnBtnLogoutClicked (object sender, EventArgs e)
+		{
+			ss_backend_assess.Commons.AdminSession.RefreshSession ();
+
+			new MainWindow ();
+
+			window.Destroy ();
+		}
+
 
 		private void OnOrderListSelectionChange (object sender, EventArgs e)
 		{

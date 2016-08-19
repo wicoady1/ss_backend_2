@@ -71,13 +71,15 @@ namespace ss_backend_assess
 		private global::Gtk.HBox hbox10;
 		
 		private global::Gtk.Button btnCheckOut;
+		
+		private global::Gtk.Button btnLogOut;
 
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget ss_backend_assess.frmMainUser
 			this.Name = "ss_backend_assess.frmMainUser";
-			this.Title = global::Mono.Unix.Catalog.GetString ("frmMainUser");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Main Menu");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child ss_backend_assess.frmMainUser.Gtk.Container+ContainerChild
 			this.vbox2 = new global::Gtk.VBox ();
@@ -373,6 +375,17 @@ namespace ss_backend_assess
 			w33.Position = 4;
 			w33.Expand = false;
 			w33.Fill = false;
+			// Container child vbox2.Gtk.Box+BoxChild
+			this.btnLogOut = new global::Gtk.Button ();
+			this.btnLogOut.CanFocus = true;
+			this.btnLogOut.Name = "btnLogOut";
+			this.btnLogOut.UseUnderline = true;
+			this.btnLogOut.Label = global::Mono.Unix.Catalog.GetString ("Logout");
+			this.vbox2.Add (this.btnLogOut);
+			global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.btnLogOut]));
+			w34.Position = 5;
+			w34.Expand = false;
+			w34.Fill = false;
 			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
@@ -386,6 +399,7 @@ namespace ss_backend_assess
 			this.btnMascara.Clicked += new global::System.EventHandler (this.OnBtnMascaraClicked);
 			this.btnConditioner.Clicked += new global::System.EventHandler (this.OnBtnConditionerClicked);
 			this.btnCheckOut.Clicked += new global::System.EventHandler (this.OnBtnCheckOutClicked);
+			this.btnLogOut.Clicked += new global::System.EventHandler (this.OnBtnLogOutClicked);
 		}
 	}
 }

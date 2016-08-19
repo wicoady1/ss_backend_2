@@ -32,6 +32,10 @@ namespace ss_backend_assess
 		protected void OnBtnFinalizeClicked (object sender, EventArgs e)
 		{
 			_cPresenter.CopyImageFile (file);
+
+			new frmMainUser ();
+			this.Destroy ();
+
 			//throw new NotImplementedException ();
 		}
 

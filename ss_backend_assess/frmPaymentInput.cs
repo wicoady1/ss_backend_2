@@ -23,6 +23,8 @@ namespace ss_backend_assess
 				this._cPresenter.InsertCustomerData ();
 
 				new frmPaymentRequest ();
+
+				this.Destroy ();
 			} else {
 				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Please double check the Input");
 				md.Run();

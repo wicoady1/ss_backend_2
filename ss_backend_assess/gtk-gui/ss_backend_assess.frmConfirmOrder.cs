@@ -31,7 +31,7 @@ namespace ss_backend_assess
 			global::Stetic.Gui.Initialize (this);
 			// Widget ss_backend_assess.frmConfirmOrder
 			this.Name = "ss_backend_assess.frmConfirmOrder";
-			this.Title = global::Mono.Unix.Catalog.GetString ("frmConfirmOrder");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Confirm Order");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child ss_backend_assess.frmConfirmOrder.Gtk.Container+ContainerChild
 			this.vbox7 = new global::Gtk.VBox ();

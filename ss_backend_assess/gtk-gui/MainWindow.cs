@@ -26,7 +26,7 @@ public partial class MainWindow
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+		this.Title = global::Mono.Unix.Catalog.GetString ("Login");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
@@ -93,6 +93,7 @@ public partial class MainWindow
 		this.txtPass.CanFocus = true;
 		this.txtPass.Name = "txtPass";
 		this.txtPass.IsEditable = true;
+		this.txtPass.Visibility = false;
 		this.txtPass.InvisibleChar = '•';
 		this.vbox1.Add (this.txtPass);
 		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.txtPass]));

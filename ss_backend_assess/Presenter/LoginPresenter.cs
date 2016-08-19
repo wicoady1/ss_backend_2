@@ -23,11 +23,29 @@ namespace ss_backend_assess.Presenter
 
 		//--login check
 		public int LoginVerifier(){
-			int intErrCode = -1;
+			string strUserType = "";
 
-			intErrCode = _cLoginModel.VerifyLogin (_ilogin.ID, _ilogin.Password);
+			strUserType = _cLoginModel.VerifyLogin (_ilogin.ID, _ilogin.Password);
 
-			return intErrCode;
+			//-- if Login is Admin Privilege
+			if (strUserType == "A")
+			{
+				MessageBox.ShowMsg ("Login Success as Admin");
+				return 2;
+			}
+			//-- if Login is User Level Privilege
+			else if (strUserType == "U")
+			{
+				MessageBox.ShowMsg ("Login Success as User");
+				return 0;
+			}
+			//-- if Login is failed
+			else
+			{
+				MessageBox.ShowMsg ("Login Failed");
+				return 1;
+			}
+
 		}
 	}
 }

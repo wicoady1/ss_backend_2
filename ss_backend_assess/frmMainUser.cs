@@ -23,6 +23,8 @@ namespace ss_backend_assess
 
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.MainUserPresenter (this, _connStr);
+
+			ss_backend_assess.Commons.Cart.RefreshSession ();
 		}
 
 		protected void OnBtnCosAddClicked (object sender, EventArgs e)
@@ -46,6 +48,8 @@ namespace ss_backend_assess
 		protected void OnBtnCheckOutClicked (object sender, EventArgs e)
 		{
 			new ss_backend_assess.frmConfirmOrder ();
+
+			this.Destroy ();
 		}
 
 		protected void OnBtnOrderStatusClicked (object sender, EventArgs e)
@@ -57,6 +61,16 @@ namespace ss_backend_assess
 		protected void OnBtnShipStatusClicked (object sender, EventArgs e)
 		{
 			new ss_backend_assess.frmUserShipCheck ();
+			//throw new NotImplementedException ();
+		}
+
+		protected void OnBtnLogOutClicked (object sender, EventArgs e)
+		{
+			ss_backend_assess.Commons.Cart.RefreshSession ();
+			ss_backend_assess.Commons.LoginInfo.RefreshSession ();
+			new MainWindow ();
+
+			this.Destroy ();
 			//throw new NotImplementedException ();
 		}
 
@@ -85,8 +99,6 @@ namespace ss_backend_assess
 				txtConQty.Text = value.ToString ();
 			}
 		}
-
-
 
 		#endregion
 	}

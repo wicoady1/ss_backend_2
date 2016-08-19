@@ -27,6 +27,8 @@ namespace ss_backend_assess
 			md.Destroy();
 
 			new frmAdminProcessShip ();
+
+			this.Destroy ();
 		}
 
 		protected void OnBtnRejectClicked (object sender, EventArgs e)
@@ -36,6 +38,10 @@ namespace ss_backend_assess
 			MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Order has Cancelled! Returning to main menu!");
 			md.Run();
 			md.Destroy();
+
+			new frmAdminOrderList ();
+
+			this.Destroy ();
 		}
 
 		#region Interface Assignment
