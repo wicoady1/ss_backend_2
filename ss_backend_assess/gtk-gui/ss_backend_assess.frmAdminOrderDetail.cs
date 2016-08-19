@@ -10,7 +10,7 @@ namespace ss_backend_assess
 		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		
-		private global::Gtk.NodeView nodeListBarang;
+		private global::Gtk.TextView txtOrderList;
 		
 		private global::Gtk.HBox hbox1;
 		
@@ -69,10 +69,10 @@ namespace ss_backend_assess
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.nodeListBarang = new global::Gtk.NodeView ();
-			this.nodeListBarang.CanFocus = true;
-			this.nodeListBarang.Name = "nodeListBarang";
-			this.GtkScrolledWindow.Add (this.nodeListBarang);
+			this.txtOrderList = new global::Gtk.TextView ();
+			this.txtOrderList.CanFocus = true;
+			this.txtOrderList.Name = "txtOrderList";
+			this.GtkScrolledWindow.Add (this.txtOrderList);
 			this.vbox3.Add (this.GtkScrolledWindow);
 			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.GtkScrolledWindow]));
 			w3.Position = 1;

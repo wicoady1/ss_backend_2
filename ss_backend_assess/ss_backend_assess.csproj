@@ -83,7 +83,6 @@
     <Compile Include="gtk-gui\ss_backend_assess.frmPaymentInput.cs" />
     <Compile Include="frmPaymentRequest.cs" />
     <Compile Include="gtk-gui\ss_backend_assess.frmPaymentRequest.cs" />
-    <Compile Include="frmAdminMain.cs" />
     <Compile Include="gtk-gui\ss_backend_assess.frmAdminMain.cs" />
     <Compile Include="frmAdminOrderDetail.cs" />
     <Compile Include="gtk-gui\ss_backend_assess.frmAdminOrderDetail.cs" />
@@ -116,6 +115,11 @@
     <Compile Include="Presenter\AdminMainPresenter.cs" />
     <Compile Include="Presenter\AdminOrderDetailPresenter.cs" />
     <Compile Include="Presenter\AdminProcessShipPresenter.cs" />
+    <Compile Include="Commons\TreeNode.cs" />
+    <Compile Include="Commons\TreeViewExample.cs" />
+    <Compile Include="frmAdminOrderList.cs" />
+    <Compile Include="frmAdminMain.cs" />
+    <Compile Include="Commons\AdminSession.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

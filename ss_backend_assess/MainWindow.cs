@@ -29,6 +29,10 @@ public partial class MainWindow: Gtk.Window, ss_backend_assess.Interface.ILogin
 		if (intErr == 0) {
 			new ss_backend_assess.frmMainUser ();
 			ss_backend_assess.Commons.Cart.RefreshSession ();
+		} else if (intErr == 2){
+			//new ss_backend_assess.frmAdminMain ();
+			new ss_backend_assess.frmAdminOrderList();
+			ss_backend_assess.Commons.Cart.RefreshSession ();
 		}
 	}
 
