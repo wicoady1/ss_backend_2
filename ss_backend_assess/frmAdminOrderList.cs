@@ -29,7 +29,7 @@ namespace ss_backend_assess
 
 		public void BuildInterface(){
 			//--- CREATE MAIN WINDOW
-			window = new Gtk.Window ("TreeView Example");
+			window = new Gtk.Window ("Admin: Order Verifier");
 			window.SetSizeRequest (500,200);
 
 			//--- Add Vertical Bar 3

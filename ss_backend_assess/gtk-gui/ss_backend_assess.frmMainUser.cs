@@ -12,8 +12,6 @@ namespace ss_backend_assess
 		
 		private global::Gtk.Fixed fixed5;
 		
-		private global::Gtk.Fixed fixed6;
-		
 		private global::Gtk.Button btnCart;
 		
 		private global::Gtk.Fixed fixed9;
@@ -25,6 +23,8 @@ namespace ss_backend_assess
 		private global::Gtk.Fixed fixed8;
 		
 		private global::Gtk.Button btnOrderStatus;
+		
+		private global::Gtk.Button btnShipStatus;
 		
 		private global::Gtk.Fixed fixed10;
 		
@@ -99,33 +99,26 @@ namespace ss_backend_assess
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.fixed5]));
 			w1.Position = 0;
 			// Container child hbox1.Gtk.Box+BoxChild
-			this.fixed6 = new global::Gtk.Fixed ();
-			this.fixed6.Name = "fixed6";
-			this.fixed6.HasWindow = false;
-			this.hbox1.Add (this.fixed6);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.fixed6]));
-			w2.Position = 1;
-			// Container child hbox1.Gtk.Box+BoxChild
 			this.btnCart = new global::Gtk.Button ();
 			this.btnCart.CanFocus = true;
 			this.btnCart.Name = "btnCart";
 			this.btnCart.UseUnderline = true;
 			this.btnCart.Label = global::Mono.Unix.Catalog.GetString ("Cart (0)");
 			this.hbox1.Add (this.btnCart);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnCart]));
-			w3.Position = 2;
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnCart]));
+			w2.Position = 1;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.fixed9 = new global::Gtk.Fixed ();
 			this.fixed9.Name = "fixed9";
 			this.fixed9.HasWindow = false;
 			this.hbox1.Add (this.fixed9);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.fixed9]));
-			w4.Position = 3;
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.fixed9]));
+			w3.Position = 2;
 			this.vbox3.Add (this.hbox1);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox1]));
-			w5.Position = 0;
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox1]));
+			w4.Position = 0;
+			w4.Expand = false;
+			w4.Fill = false;
 			// Container child vbox3.Gtk.Box+BoxChild
 			this.hbox2 = new global::Gtk.HBox ();
 			this.hbox2.Name = "hbox2";
@@ -135,24 +128,38 @@ namespace ss_backend_assess
 			this.fixed7.Name = "fixed7";
 			this.fixed7.HasWindow = false;
 			this.hbox2.Add (this.fixed7);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.fixed7]));
-			w6.Position = 0;
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.fixed7]));
+			w5.Position = 0;
 			// Container child hbox2.Gtk.Box+BoxChild
 			this.fixed8 = new global::Gtk.Fixed ();
 			this.fixed8.Name = "fixed8";
 			this.fixed8.HasWindow = false;
-			this.hbox2.Add (this.fixed8);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.fixed8]));
-			w7.Position = 1;
-			// Container child hbox2.Gtk.Box+BoxChild
+			// Container child fixed8.Gtk.Fixed+FixedChild
 			this.btnOrderStatus = new global::Gtk.Button ();
 			this.btnOrderStatus.CanFocus = true;
 			this.btnOrderStatus.Name = "btnOrderStatus";
 			this.btnOrderStatus.UseUnderline = true;
 			this.btnOrderStatus.Label = global::Mono.Unix.Catalog.GetString ("Order Status");
-			this.hbox2.Add (this.btnOrderStatus);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.btnOrderStatus]));
+			this.fixed8.Add (this.btnOrderStatus);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.btnOrderStatus]));
+			w6.X = -2;
+			w6.Y = 7;
+			this.hbox2.Add (this.fixed8);
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.fixed8]));
+			w7.Position = 1;
+			w7.Expand = false;
+			w7.Fill = false;
+			// Container child hbox2.Gtk.Box+BoxChild
+			this.btnShipStatus = new global::Gtk.Button ();
+			this.btnShipStatus.CanFocus = true;
+			this.btnShipStatus.Name = "btnShipStatus";
+			this.btnShipStatus.UseUnderline = true;
+			this.btnShipStatus.Label = global::Mono.Unix.Catalog.GetString ("Ship Status Check");
+			this.hbox2.Add (this.btnShipStatus);
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.btnShipStatus]));
 			w8.Position = 2;
+			w8.Expand = false;
+			w8.Fill = false;
 			// Container child hbox2.Gtk.Box+BoxChild
 			this.fixed10 = new global::Gtk.Fixed ();
 			this.fixed10.Name = "fixed10";
@@ -373,6 +380,8 @@ namespace ss_backend_assess
 			this.DefaultWidth = 649;
 			this.DefaultHeight = 464;
 			this.Show ();
+			this.btnOrderStatus.Clicked += new global::System.EventHandler (this.OnBtnOrderStatusClicked);
+			this.btnShipStatus.Clicked += new global::System.EventHandler (this.OnBtnShipStatusClicked);
 			this.btnCosAdd.Clicked += new global::System.EventHandler (this.OnBtnCosAddClicked);
 			this.btnMascara.Clicked += new global::System.EventHandler (this.OnBtnMascaraClicked);
 			this.btnConditioner.Clicked += new global::System.EventHandler (this.OnBtnConditionerClicked);

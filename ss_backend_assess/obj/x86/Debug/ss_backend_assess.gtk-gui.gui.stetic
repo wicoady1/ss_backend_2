@@ -156,16 +156,6 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Fixed" id="fixed6">
-                    <property name="MemberName" />
-                    <property name="HasWindow">False</property>
-                  </widget>
-                  <packing>
-                    <property name="Position">1</property>
-                    <property name="AutoSize">True</property>
-                  </packing>
-                </child>
-                <child>
                   <widget class="Gtk.Button" id="btnCart">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
@@ -174,7 +164,7 @@
                     <property name="UseUnderline">True</property>
                   </widget>
                   <packing>
-                    <property name="Position">2</property>
+                    <property name="Position">1</property>
                     <property name="AutoSize">False</property>
                   </packing>
                 </child>
@@ -184,7 +174,7 @@
                     <property name="HasWindow">False</property>
                   </widget>
                   <packing>
-                    <property name="Position">3</property>
+                    <property name="Position">2</property>
                     <property name="AutoSize">True</property>
                   </packing>
                 </child>
@@ -214,23 +204,42 @@
                   <widget class="Gtk.Fixed" id="fixed8">
                     <property name="MemberName" />
                     <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Button" id="btnOrderStatus">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Order Status</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnBtnOrderStatusClicked" />
+                      </widget>
+                      <packing>
+                        <property name="X">-2</property>
+                        <property name="Y">7</property>
+                      </packing>
+                    </child>
                   </widget>
                   <packing>
                     <property name="Position">1</property>
                     <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="btnOrderStatus">
+                  <widget class="Gtk.Button" id="btnShipStatus">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
-                    <property name="Label" translatable="yes">Order Status</property>
+                    <property name="Label" translatable="yes">Ship Status Check</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnBtnShipStatusClicked" />
                   </widget>
                   <packing>
                     <property name="Position">2</property>
-                    <property name="AutoSize">False</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
                   </packing>
                 </child>
                 <child>
@@ -1637,6 +1646,77 @@ a.n. Test Test Test</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="ss_backend_assess.frmUserShipCheck" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">Shipment Check</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox9">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.Label" id="label13">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Please Insert Shipment ID here</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="txtShipID">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnCheck">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Check!</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnCheckClicked" />
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="txtInquiryResult">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
           </packing>
         </child>
       </widget>
