@@ -1,4 +1,12 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	frmAdminOrderDetail - Shows order detail 
+ * 	Rev			:
+ */
+//#########################
+using System;
 using Gtk;
 
 namespace ss_backend_assess
@@ -16,28 +24,26 @@ namespace ss_backend_assess
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.AdminOrderDetailPresenter (this, _connStr);
 
+			//-- Load Order, which need to be approve / reject by admin
 			this._cPresenter.LoadOrderInfo (ss_backend_assess.Commons.AdminSession.strOrderID);
 		}
 
+		//--- Approve Button Clicked
 		protected void OnBtnApproveClicked (object sender, EventArgs e)
 		{
 			_cPresenter.UpdateOrderApproval (ss_backend_assess.Commons.AdminSession.strOrderID, "Y");
-			MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Order has Accepted! Proceeding to Shipment...");
-			md.Run();
-			md.Destroy();
+			MessageBox.ShowMsg ("Order has Accepted! Proceeding to Shipment...");
 
 			new frmAdminProcessShip ();
 
 			this.Destroy ();
 		}
 
+		//--- Reject Button Clicked
 		protected void OnBtnRejectClicked (object sender, EventArgs e)
 		{
 			_cPresenter.UpdateOrderApproval (ss_backend_assess.Commons.AdminSession.strOrderID, "N");
-
-			MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Order has Cancelled! Returning to main menu!");
-			md.Run();
-			md.Destroy();
+			MessageBox.ShowMsg ("Order has Cancelled! Returning to main menu!");
 
 			new frmAdminOrderList ();
 

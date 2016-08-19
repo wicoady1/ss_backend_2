@@ -1,4 +1,12 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Menu for check order status by Shipping ID
+ * 	Rev			:
+ */
+//#########################
+using System;
 
 namespace ss_backend_assess
 {
@@ -18,10 +26,10 @@ namespace ss_backend_assess
 
 		}
 
+		//--- Button for check order by Shipping ID
 		protected void OnBtnCheckClicked (object sender, EventArgs e)
 		{
 			_cPresenter.CheckShipStatus ();
-			//throw new NotImplementedException ();
 		}
 
 		#region Interface Assigment

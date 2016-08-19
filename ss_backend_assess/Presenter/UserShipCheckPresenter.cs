@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Presenter - frmUserShipCheck
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 
 namespace ss_backend_assess.Presenter
@@ -21,6 +30,7 @@ namespace ss_backend_assess.Presenter
 
 			dtResult = _cUserCheckModel.RetrieveOrderMaster (_iUserCheck.ShipmentID);
 
+			//--- Check if Shipping ID is correct?
 			if (dtResult.Rows.Count == 0) {
 				_iUserCheck.ShipmentStatus = "There is no Shipment Number exists!\nPlease try again or check input.";
 			}

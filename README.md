@@ -38,3 +38,7 @@ All Requirement Complete - Proceed to QA
 - Logout capability
 - Windows will be closed if the process goes to next step
 - Session will be reset every time order success
+
+**20160819_v0013**	
+- Admin Menu: After set order to shipped, menu didn't back to Main Menu
+- Additional Code Documentations

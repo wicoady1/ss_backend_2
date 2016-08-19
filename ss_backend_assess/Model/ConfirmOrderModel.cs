@@ -1,4 +1,14 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Model - frmConfirmOrder
+ * 	Rev			:
+ */
+//#########################
+
+
+using System;
 using System.Data;
 using Mono.Data.Sqlite;
 using System.Xml;
@@ -22,7 +32,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -39,7 +48,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -56,7 +64,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -69,16 +76,9 @@ namespace ss_backend_assess.Model
 		//--- cut item stock
 		public void CutItemStock (string strCode, int intQty){
 			string strQuery = "update tblProductData set Stock = Stock - " + intQty.ToString () + " where ProductID = '" + strCode + "'";
-			//string strQuery = "update tblProductData set Stock = Stock - @intQty where ProductID = '@strCode'";
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-
-			//_conn.sqlComm.CommandText = "update tblProductData set Stock = Stock - @intQty where ProductID = '@strCode'";
-			//_conn.sqlComm.Parameters.AddWithValue ("@intQty", intQty);
-			//_conn.sqlComm.Parameters.AddWithValue ("@strCode", strCode);
-			//_conn.sqlComm.Parameters.Add (intQty.ToString());
-			//_conn.sqlComm.Parameters.Add (strCode);
 
 			_conn.sqlComm.ExecuteNonQuery ();
 
@@ -89,12 +89,10 @@ namespace ss_backend_assess.Model
 		//--- cut coupon stock
 		public void CutCouponStock (string strCode){
 			string strQuery = "update tblCoupon set Qty = Qty - 1 where Code = '" + strCode + "'";
-			//string strQuery = "update tblCoupon set Qty = Qty - 1 where Code = '?'";
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
 
-			//_conn.sqlComm.Parameters.Add (strCode);
 
 			_conn.sqlComm.ExecuteNonQuery();
 

@@ -1,4 +1,14 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Model - frmPaymentRequest
+ * 	Rev			:
+ */
+//#########################
+
+
+using System;
 using Mono.Data.Sqlite;
 
 namespace ss_backend_assess.Model
@@ -20,12 +30,10 @@ namespace ss_backend_assess.Model
 				"set PayProof = 'Y'," +
 				"PayProofPath = '" + strPath + "'" + 
 				"where OrderID = " + strOrderID;
-			//string strQuery = "update tblCoupon set Qty = Qty - 1 where Code = '?'";
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
 
-			//_conn.sqlComm.Parameters.Add (strCode);
 
 			_conn.sqlComm.ExecuteNonQuery();
 

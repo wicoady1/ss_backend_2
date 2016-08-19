@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	NOT USED -- Class reserved for compiling (changed to frmAdminOrderList)
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 using Gtk;
 

@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	frmAdminOrderList - Admin Main Menu
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 using Gtk;
 
@@ -23,11 +32,14 @@ namespace ss_backend_assess
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.AdminMainPresenter (this, _connStr);
 
+			//-- Generate UI
 			BuildInterface ();
 
 			strSelectedOrderID = "-1";
 		}
 
+		//--- Class for generating UI
+		//--- For this case is using script, due of TreeNode View need to be declared as Script (not drag-n-drop)
 		public void BuildInterface(){
 			//--- CREATE MAIN WINDOW
 			window = new Gtk.Window ("Admin: Order Verifier");
@@ -71,7 +83,7 @@ namespace ss_backend_assess
 			window.ShowAll ();
 		}
 
-
+		//--- Process an order (shows order detail)
 		private void OnBtnProcessClicked (object sender, EventArgs e)
 		{
 			if (ss_backend_assess.Commons.AdminSession.strOrderID == "" || ss_backend_assess.Commons.AdminSession.strOrderID == null) {
@@ -82,6 +94,7 @@ namespace ss_backend_assess
 			}
 		}
 
+		//--- Reset Session and back to login menu
 		private void OnBtnLogoutClicked (object sender, EventArgs e)
 		{
 			ss_backend_assess.Commons.AdminSession.RefreshSession ();
@@ -91,7 +104,7 @@ namespace ss_backend_assess
 			window.Destroy ();
 		}
 
-
+		//-- When user change row selection in TreeView --> mark selected row's Order ID
 		private void OnOrderListSelectionChange (object sender, EventArgs e)
 		{
 			Gtk.TreeSelection selection = (sender as Gtk.TreeView).Selection;
@@ -105,9 +118,7 @@ namespace ss_backend_assess
 
 				strMessage = "Selected Order ID = " + model.GetValue (iter, 0).ToString ();
 
-				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, strMessage);
-				md.Run();
-				md.Destroy();
+				MessageBox.ShowMsg (strMessage);
 			}
 		}
 

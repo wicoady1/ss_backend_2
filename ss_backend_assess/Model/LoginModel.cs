@@ -37,7 +37,8 @@ namespace ss_backend_assess.Model
 			try{
 				_conn.sqlConn.Open ();
 				_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-				//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
+
+
 				_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 				dsResult.Reset ();
 				_conn.sqlDataAdapter.Fill (dsResult);

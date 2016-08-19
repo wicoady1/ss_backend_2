@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Presenter - frmAdminProcessShip
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 
 namespace ss_backend_assess.Presenter
@@ -33,9 +42,19 @@ namespace ss_backend_assess.Presenter
 		}
 
 
-		//--- Update Shipment Status
-		public void UpdateShipmentStatus (string strOrderID){
-			_cAdminShipModel.UpdateShipStatus (strOrderID, this._iAdminShip.ShipID);
+		//--- Update Shipment Status (with Shipping ID)
+		public bool UpdateShipmentStatus (string strOrderID){
+
+			//-- check if the order is already shipped or not?
+			if (_iAdminShip.ShipStatus == "Y") {
+				_cAdminShipModel.UpdateShipStatus (strOrderID, this._iAdminShip.ShipID);
+				MessageBox.ShowMsg ("Order ID: " +strOrderID+ " has shipped succesfully!");
+
+				return true;
+			} else {
+				MessageBox.ShowMsg ("Please check \"Shipped?\" before proceed");
+			}
+			return false;
 		}
 	}
 }

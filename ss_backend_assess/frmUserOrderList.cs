@@ -1,4 +1,12 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Menu for listing all submitted user's order
+ * 	Rev			:
+ */
+//#########################
+using System;
 using System.Data;
 
 namespace ss_backend_assess
@@ -21,10 +29,9 @@ namespace ss_backend_assess
 			this._cPresenter = new ss_backend_assess.Presenter.UserOrderListPresenter (this, _connStr);
 
 			BuildInterface ();
-
-
 		}
 
+		//--- For building User Interface
 		public void BuildInterface(){
 			//--- CREATE MAIN WINDOW
 			window = new Gtk.Window ("User Order List");

@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Presenter - frmUserOrderList
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 using Gtk;
 
@@ -15,7 +24,7 @@ namespace ss_backend_assess.Presenter
 			this._cUserOrderModel = new Model.UserOrderListModel (conStr);
 		}
 
-		//--- LOAD all Order created by user with Status
+		//--- LOAD all Order created by user with Order Status
 		public void LoadMasterOrder(){
 			DataTable dtResult = new DataTable ();
 

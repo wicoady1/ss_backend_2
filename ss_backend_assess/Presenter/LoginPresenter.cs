@@ -2,7 +2,7 @@
 /*
  * 	Name		:	Kennard Wicoady
  * 	Date		:	20160818
- * 	Program		:	Login - Presenter
+ * 	Program		:	Presenter - MainWindow
  * 	Rev			:
  */
 //#########################

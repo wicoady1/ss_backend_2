@@ -2,7 +2,7 @@
 /*
  * 	Name		:	Kennard Wicoady
  * 	Date		:	20160818
- * 	Program		:	Main User - Forms
+ * 	Program		:	Main menu for User
  * 	Rev			:
  */
 //#########################
@@ -24,27 +24,29 @@ namespace ss_backend_assess
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.MainUserPresenter (this, _connStr);
 
+			//-- Whenever this form loads first time, refresh user's sessions
 			ss_backend_assess.Commons.Cart.RefreshSession ();
 		}
 
+		//-- Add Cosmetic to Cart, according to inputted amount
 		protected void OnBtnCosAddClicked (object sender, EventArgs e)
 		{
 			this._cPresenter.AddItemToCart ("prd001", "Cosmetic", txtCosQty.Text);
-			//throw new NotImplementedException ();
 		}
 
+		//-- Add Mascara to Cart, according to inputted amount
 		protected void OnBtnMascaraClicked (object sender, EventArgs e)
 		{
 			this._cPresenter.AddItemToCart ("prd002", "Mascara", txtMasQty.Text);
-			//throw new NotImplementedException ();
 		}
 
+		//-- Add Conditioner to Cart, according to inputted amount
 		protected void OnBtnConditionerClicked (object sender, EventArgs e)
 		{
 			this._cPresenter.AddItemToCart ("prd003", "Conditioner", txtConQty.Text);
-			//throw new NotImplementedException ();
 		}
 
+		//-- Check out to process order (open Confirm Order window)
 		protected void OnBtnCheckOutClicked (object sender, EventArgs e)
 		{
 			new ss_backend_assess.frmConfirmOrder ();
@@ -52,18 +54,19 @@ namespace ss_backend_assess
 			this.Destroy ();
 		}
 
+		//-- Check Ordered Order Status List (open Order Status List window)
 		protected void OnBtnOrderStatusClicked (object sender, EventArgs e)
 		{
 			new ss_backend_assess.frmUserOrderList ();
-			//throw new NotImplementedException ();
 		}
 
+		//-- Check Shipping Status List (open Shipping Check window)
 		protected void OnBtnShipStatusClicked (object sender, EventArgs e)
 		{
 			new ss_backend_assess.frmUserShipCheck ();
-			//throw new NotImplementedException ();
 		}
 
+		//-- Check Shipping Status List (open Shipping Check window)
 		protected void OnBtnLogOutClicked (object sender, EventArgs e)
 		{
 			ss_backend_assess.Commons.Cart.RefreshSession ();
@@ -71,7 +74,6 @@ namespace ss_backend_assess
 			new MainWindow ();
 
 			this.Destroy ();
-			//throw new NotImplementedException ();
 		}
 
 		#region Interface

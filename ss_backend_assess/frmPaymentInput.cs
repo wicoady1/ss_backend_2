@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Menu for inputting user's data for an order
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using Gtk;
 
 namespace ss_backend_assess
@@ -17,18 +26,19 @@ namespace ss_backend_assess
 			this._cPresenter = new ss_backend_assess.Presenter.PaymentInputPresenter (this, _connStr);
 		}
 
+		//-- When user presses Proceed Button
 		protected void OnBtnProceedClicked (object sender, EventArgs e)
 		{
+			//--- Validate inputs
 			if (_cPresenter.DataValidation ()) {
+				//-- If validation is OK --> Proceed to next step
 				this._cPresenter.InsertCustomerData ();
 
 				new frmPaymentRequest ();
-
 				this.Destroy ();
 			} else {
-				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Please double check the Input");
-				md.Run();
-				md.Destroy();
+				//--- If not OK --> show MessageBox
+				MessageBox.ShowMsg ("Please double check the Input");
 			}
 		}
 

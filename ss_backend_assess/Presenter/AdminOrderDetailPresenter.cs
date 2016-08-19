@@ -1,4 +1,12 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Presenter - frmAdminOrderDetail
+ * 	Rev			:
+ */
+//#########################
+using System;
 using System.Data;
 
 namespace ss_backend_assess.Presenter
@@ -24,7 +32,7 @@ namespace ss_backend_assess.Presenter
 			LoadOrderDetail ();
 		}
 
-		//--- Load Order Master
+		//--- Load Order Master (User's Data) Info
 		private void LoadMasterOrder(){
 			DataTable dtResult = new DataTable ();
 			Gdk.Pixbuf imgData;
@@ -56,7 +64,7 @@ namespace ss_backend_assess.Presenter
 			_iAdminDet.OrderDetail = strOrderDetail;
 		}
 
-		//--- Update Approval Status
+		//--- Update Approval Status (Approved / Rejected)
 		public void UpdateOrderApproval(string strOrderID, string strCondition){
 			_cAdminDetModel.UpdateApprovalFlag (strOrderID, strCondition);
 		}

@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	frmAdminProcessShip - Process Order Shipment and mark it as shipped
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 
 namespace ss_backend_assess
 {
@@ -15,13 +24,17 @@ namespace ss_backend_assess
 
 			this.Build ();
 
+			//-- Load current Order Detail
 			this._cPresenter.LoadOrderDetail (ss_backend_assess.Commons.AdminSession.strOrderID);
 		}
 
+		//--- When user click Ship button for current order
 		protected void OnBtnUpdateShipClicked (object sender, EventArgs e)
 		{
-			this._cPresenter.UpdateShipmentStatus (ss_backend_assess.Commons.AdminSession.strOrderID);
-			//throw new NotImplementedException ();
+			if (this._cPresenter.UpdateShipmentStatus (ss_backend_assess.Commons.AdminSession.strOrderID)) {
+				new frmAdminOrderList ();
+				this.Destroy ();
+			}
 		}
 
 		#region Interface Assigment

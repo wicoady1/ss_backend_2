@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Model - frmAdminMain
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 using Mono.Data.Sqlite;
 
@@ -21,7 +30,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();

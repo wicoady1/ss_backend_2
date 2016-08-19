@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	frmConfirmOrder - Shows all user's order. User can input Coupon Code here
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 
 namespace ss_backend_assess
 {
@@ -16,17 +25,20 @@ namespace ss_backend_assess
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.ConfirmOrderPresenter (this, _connStr);
 
+			//-- Show + calculate all order's price 
 			this._cPresenter.CalculateOrder ();
 		}
 
+		//-- If user decided and click Use Coupon button
 		protected void OnBtnSubmitCouponClicked (object sender, EventArgs e)
 		{
 			this._cPresenter.UseCoupon ();
-			//throw new NotImplementedException ();
 		}
 
+		//-- Proceed to frmPaymentInput (user will input his/her data for order)
 		protected void OnBtnGoPaymentClicked (object sender, EventArgs e)
 		{
+			//-- Check if the item is still available in warehouse or not?
 			if (!this._cPresenter.ItemValid ()) {
 				new frmMainUser ();
 				this.Destroy ();

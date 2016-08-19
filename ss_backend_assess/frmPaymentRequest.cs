@@ -1,4 +1,12 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Menu for confirming order + upload Payment Proof
+ * 	Rev			:
+ */
+//#########################
+using System;
 using Gtk;
 
 namespace ss_backend_assess
@@ -22,21 +30,26 @@ namespace ss_backend_assess
 			this._cPresenter = new ss_backend_assess.Presenter.PaymentRequestPresenter (this, _connStr);
 		}
 
+		//--- Upload Payment Proof
 		protected void OnBtnProofUploadClicked (object sender, EventArgs e)
 		{
 			this.OpenFileDialog ();
-
-			//throw new NotImplementedException ();
 		}
 
+		//--- Button for Finalize Order
 		protected void OnBtnFinalizeClicked (object sender, EventArgs e)
 		{
-			_cPresenter.CopyImageFile (file);
+			//--- If user not yet upload his/her payment proof
+			if (pixbuf != null) {
+				_cPresenter.CopyImageFile (file);
 
-			new frmMainUser ();
-			this.Destroy ();
+				new frmMainUser ();
+				this.Destroy ();
+			} else {
+				MessageBox.ShowMsg ("Please upload the Payment Proof...");
+			}
 
-			//throw new NotImplementedException ();
+
 		}
 
 		#region Interface Assignment

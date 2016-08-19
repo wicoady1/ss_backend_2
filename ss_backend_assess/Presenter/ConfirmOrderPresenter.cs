@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Presenter - frmConfirmOrder
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 using System.Xml;
 using Gtk;
@@ -28,12 +37,13 @@ namespace ss_backend_assess.Presenter
 			intTotalPrice = 0;
 			intGrandTotal = 0;
 
+			// iterate Cart's item
 			for (int i = 0; i < ss_backend_assess.Commons.Cart.strItemCode.Length; i++) {
 				intPrice = 0;
 				intTotalPrice = 0;
 
 				if (ss_backend_assess.Commons.Cart.strItemCode [i] == null) {
-					//intLastIndex = i;
+					
 					break;
 				} else {
 					intPrice = _cConOrderModel.CheckItemPrice (ss_backend_assess.Commons.Cart.strItemCode [i]);
@@ -63,6 +73,7 @@ namespace ss_backend_assess.Presenter
 			int intStorageQty = 0;
 			string strWarningMsg = "";
 
+			// iterate Cart's item
 			for (int i = 0; i < ss_backend_assess.Commons.Cart.strItemCode.Length; i++) {
 				
 				if (ss_backend_assess.Commons.Cart.strItemCode [i] == null) {
@@ -118,8 +129,11 @@ namespace ss_backend_assess.Presenter
 
 			dtResult = (DataTable) _cConOrderModel.CheckCouponCode (_iConOrder.CouponCode);
 
+			//-- If coupon is valid
 			if (boolValidCoupon) {
 				//-- recalculate GRAND TOTAL + ADD DESC OF COUPON
+
+				//-- If Coupon is Percent cut
 				if (dtResult.Rows [0] ["DiscType"].ToString () == "P")
 				{
 					intDiscount = Convert.ToInt32 (dtResult.Rows [0] ["PercentCut"].ToString ());
@@ -130,6 +144,7 @@ namespace ss_backend_assess.Presenter
 					strTotalOrder += "---------------------------------------------------------\n";
 					strTotalOrder += "GRAND TOTAL --------------- " + intNewGrandTotal + " IDR";
 				}
+				//-- If Coupon is Nominal cut
 				else if (dtResult.Rows [0] ["DiscType"].ToString () == "N")
 				{
 					intDiscount = Convert.ToInt32 (dtResult.Rows [0] ["NominalCut"].ToString ()) ;
@@ -183,6 +198,7 @@ namespace ss_backend_assess.Presenter
 
 				return false;
 			}
+			//-- neither is valid (expired + empty)
 			else {
 				MessageDialog md = new MessageDialog(null,DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, "Coupon has Expired!");
 				md.Run();

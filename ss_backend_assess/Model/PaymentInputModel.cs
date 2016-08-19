@@ -1,4 +1,14 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Model - frmPaymentInput
+ * 	Rev			:
+ */
+//#########################
+
+
+using System;
 using System.Data;
 using Mono.Data.Sqlite;
 using System.Xml;
@@ -22,7 +32,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -48,7 +57,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -73,19 +81,14 @@ namespace ss_backend_assess.Model
 			string strQuery = "INSERT INTO tblOrderMaster (OrderID, CustName, CustPhone, CustEmail, CustAddress, AppStatus, Ship, ShipNo, PayProof, PayProofPath)" +
 				"VALUES ("+intLatestOrderID+",'"+strName+"','"+strPhone+"','"+strEmail+"','"+strAddress+"','X','X','X','X','X')";
 
-			//string strQuery = "update tblCoupon set Qty = Qty - 1 where Code = '?'";
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-
-			//_conn.sqlComm.Parameters.Add (strCode);
 
 			_conn.sqlComm.ExecuteNonQuery();
 
 			_conn.sqlConn.Close ();
 
-			//--- Continue to Input Customer Order
-			//this.InputCustomerOrder(intLatestOrderID);
 			return intLatestOrderID;
 		}
 
@@ -94,12 +97,10 @@ namespace ss_backend_assess.Model
 			int intLatestOrderID = this.LatestOrderDetailID () + 1;
 			string strQuery = "INSERT INTO tblOrderDetail (OrderDetailID, OrderID, ProductID, ProductQty)" +
 			                  "VALUES (" + intLatestOrderID + ", '" + strOrderID + "', '" + strProdID + "', " + intQty.ToString () + ")";
-			//string strQuery = "update tblCoupon set Qty = Qty - 1 where Code = '?'";
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
 
-			//_conn.sqlComm.Parameters.Add (strCode);
 
 			_conn.sqlComm.ExecuteNonQuery();
 

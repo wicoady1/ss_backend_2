@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Presenter - frmPaymentInputPresenter
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 
 namespace ss_backend_assess.Presenter
 {
@@ -49,7 +58,7 @@ namespace ss_backend_assess.Presenter
 			//-- insert Order Detail Data
 			for (int i = 0; i < ss_backend_assess.Commons.Cart.strItemCode.Length; i++) {
 				if (ss_backend_assess.Commons.Cart.strItemCode [i] == null) {
-					//intLastIndex = i;
+					
 					break;
 				} else {
 					this._cPayInputModel.InputCustomerOrder (intOrderID.ToString(),

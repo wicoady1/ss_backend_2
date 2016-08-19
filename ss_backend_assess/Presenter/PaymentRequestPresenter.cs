@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160818
+ * 	Program		:	Presenter - frmPaymentRequestPresenter
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using Gtk;
 
 namespace ss_backend_assess.Presenter
@@ -17,32 +26,6 @@ namespace ss_backend_assess.Presenter
 
 		}
 
-		//--- Open File Dialog for Upload IMG
-		/*
-		public void OpenFileDialog(){
-
-			//FileChooserDialog fcDial = new FileChooserDialog("Choose Image as Payment Proof",
-			//	this,
-			//	FileChooserAction.Open)
-
-			FileChooserDialog fcDial = new FileChooserDialog ("Choose Image as Payment Proof",
-				this,
-				FileChooserAction.Open,
-				"Cancel", ResponseType.Cancel,
-				"Open", ResponseType.Accept);
-			System.IO.FileStream file;
-			Gdk.Pixbuf pixbuf;
-
-
-			if (fcDial.Run () == (int)ResponseType.Accept) {
-				file = System.IO.File.OpenRead (fcDial.Filename);
-				pixbuf = new Gdk.Pixbuf (file); 
-
-				_iPayReq.PayProof = pixbuf;
-			}
-		}
-		*/
-
 		//--- Copy File
 		public void CopyImageFile(System.IO.FileStream file){
 			string strPayProofPath = "ImgUpload/" + ss_backend_assess.Commons.Cart.strOrderID;
@@ -52,7 +35,6 @@ namespace ss_backend_assess.Presenter
 			file.CopyTo (fileTo);
 
 			file.Close ();
-			//System.IO.File.Copy(strFilePath, strPayProofPath);
 
 			this.UpdatePaymentStatus (strPayProofPath);
 		}

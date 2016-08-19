@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	Model - frmAdminOrderDetail
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 using System.Data;
 using Mono.Data.Sqlite;
 
@@ -22,7 +31,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -42,7 +50,6 @@ namespace ss_backend_assess.Model
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
-			//_conn.sqlReader = _conn.sqlComm.ExecuteReader ();
 
 			_conn.sqlDataAdapter = new Mono.Data.Sqlite.SqliteDataAdapter (strQuery, _conn.sqlConn);
 			dsResult.Reset ();
@@ -55,16 +62,10 @@ namespace ss_backend_assess.Model
 		//--- Update Approval Flag
 		public void UpdateApprovalFlag (string strOrderID, string strUpdateFlag){
 			string strQuery = "update tblOrderMaster set AppStatus = '" + strUpdateFlag + "' where OrderID = '" + strOrderID + "'";
-			//string strQuery = "update tblProductData set Stock = Stock - @intQty where ProductID = '@strCode'";
 
 			_conn.sqlConn.Open ();
 			_conn.sqlComm = new SqliteCommand (strQuery, _conn.sqlConn);
 
-			//_conn.sqlComm.CommandText = "update tblProductData set Stock = Stock - @intQty where ProductID = '@strCode'";
-			//_conn.sqlComm.Parameters.AddWithValue ("@intQty", intQty);
-			//_conn.sqlComm.Parameters.AddWithValue ("@strCode", strCode);
-			//_conn.sqlComm.Parameters.Add (intQty.ToString());
-			//_conn.sqlComm.Parameters.Add (strCode);
 
 			_conn.sqlComm.ExecuteNonQuery ();
 
