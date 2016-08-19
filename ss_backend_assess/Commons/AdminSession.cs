@@ -1,4 +1,13 @@
-﻿using System;
+﻿//#########################
+/*
+ * 	Name		:	Kennard Wicoady
+ * 	Date		:	20160819
+ * 	Program		:	This Class is used as Session Login Admin Variables
+ * 	Rev			:
+ */
+//#########################
+
+using System;
 
 namespace ss_backend_assess.Commons
 {

@@ -115,8 +115,6 @@
     <Compile Include="Presenter\AdminMainPresenter.cs" />
     <Compile Include="Presenter\AdminOrderDetailPresenter.cs" />
     <Compile Include="Presenter\AdminProcessShipPresenter.cs" />
-    <Compile Include="Commons\TreeNode.cs" />
-    <Compile Include="Commons\TreeViewExample.cs" />
     <Compile Include="frmAdminOrderList.cs" />
     <Compile Include="frmAdminMain.cs" />
     <Compile Include="Commons\AdminSession.cs" />

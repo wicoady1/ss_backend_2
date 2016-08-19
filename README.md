@@ -42,3 +42,7 @@ All Requirement Complete - Proceed to QA
 **20160819_v0013**	
 - Admin Menu: After set order to shipped, menu didn't back to Main Menu
 - Additional Code Documentations
+
+**20160819_v0014**
+- Additional Code Documentations
+- Additional Project and Code Cleaning
