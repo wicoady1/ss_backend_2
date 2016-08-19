@@ -29,3 +29,6 @@ Admin Side Menu Development (frmAdminOrderDetail, frmAdminOrderList)
 
 # 20160819_v0010	
 Admin Side Menu Development (Complete)
+
+# 20160819_v0011	
+All Requirement Complete - Proceed to QA
