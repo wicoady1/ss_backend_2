@@ -55,3 +55,10 @@ All Requirement Complete - Proceed to QA
 - Order List Menu Admin: Exception Bug Fixed when Payment Proof Image Loaded
 - Payment Proof Confirmation: Final Price has added to description
 - Show User Order List: Close Button has been added and worked
+
+**20160820_v0017**
+- User Main Menu: User able to clear Cart
+- Admin Process Ship: Additional Validation for Blank input Shipment ID
+- All Menu: Window Title has been properly changed (not using placehorder name)
+- User Order Confirmation Menu: User able to back to Main Menu
+- Sessions: Session will now refresh only when login is success and after completing order

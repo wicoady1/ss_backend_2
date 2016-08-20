@@ -37,12 +37,14 @@ public partial class MainWindow: Gtk.Window, ss_backend_assess.Interface.ILogin
 
 		if (intErr == 0) {
 			new ss_backend_assess.frmMainUser ();
+			//-- Refresh user's sessions
 			ss_backend_assess.Commons.Cart.RefreshSession ();
 
 			this.Destroy ();
 		} else if (intErr == 2){
 			new ss_backend_assess.frmAdminOrderList();
-			ss_backend_assess.Commons.Cart.RefreshSession ();
+			//-- Refresh user's sessions
+			ss_backend_assess.Commons.AdminSession.RefreshSession ();
 
 			this.Destroy ();
 		}

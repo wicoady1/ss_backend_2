@@ -30,6 +30,7 @@ namespace ss_backend_assess.Presenter
 			DataTable dtResult = new DataTable ();
 			string strOrderDetail = "";
 
+			_iAdminShip.ShipOrderTitle = strOrderID;
 			dtResult = _cAdminShipModel.RetrieveOrderDetail (strOrderID);
 
 			for (int i = 0; i < dtResult.Rows.Count; i++) {
@@ -48,11 +49,13 @@ namespace ss_backend_assess.Presenter
 			//-- check if the order is already shipped or not?
 			if (_iAdminShip.ShipStatus == "Y") {
 				_cAdminShipModel.UpdateShipStatus (strOrderID, this._iAdminShip.ShipID);
-				MessageBox.ShowMsg ("Order ID: " +strOrderID+ " has shipped succesfully!");
+				MessageBox.ShowMsg ("Order ID: " + strOrderID + " has shipped succesfully!");
 
 				return true;
-			} else {
+			} else if (_iAdminShip.ShipStatus == "N") {
 				MessageBox.ShowMsg ("Please check \"Shipped?\" before proceed");
+			} else if (_iAdminShip.ShipID = "") {
+				MessageBox.ShowMsg ("Please input the Shipment ID!");
 			}
 			return false;
 		}

@@ -105,7 +105,7 @@ namespace ss_backend_assess
 			this.btnCart.CanFocus = true;
 			this.btnCart.Name = "btnCart";
 			this.btnCart.UseUnderline = true;
-			this.btnCart.Label = global::Mono.Unix.Catalog.GetString ("Cart (0)");
+			this.btnCart.Label = global::Mono.Unix.Catalog.GetString ("Clear Cart");
 			this.hbox1.Add (this.btnCart);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnCart]));
 			w2.Position = 1;
@@ -393,6 +393,7 @@ namespace ss_backend_assess
 			this.DefaultWidth = 649;
 			this.DefaultHeight = 464;
 			this.Show ();
+			this.btnCart.Clicked += new global::System.EventHandler (this.OnBtnCartClicked);
 			this.btnOrderStatus.Clicked += new global::System.EventHandler (this.OnBtnOrderStatusClicked);
 			this.btnShipStatus.Clicked += new global::System.EventHandler (this.OnBtnShipStatusClicked);
 			this.btnCosAdd.Clicked += new global::System.EventHandler (this.OnBtnCosAddClicked);

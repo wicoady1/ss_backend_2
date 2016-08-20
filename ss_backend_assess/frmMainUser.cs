@@ -23,9 +23,6 @@ namespace ss_backend_assess
 
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.MainUserPresenter (this, _connStr);
-
-			//-- Whenever this form loads first time, refresh user's sessions
-			ss_backend_assess.Commons.Cart.RefreshSession ();
 		}
 
 		//-- Add Cosmetic to Cart, according to inputted amount
@@ -76,6 +73,12 @@ namespace ss_backend_assess
 			this.Destroy ();
 		}
 
+		//-- Clear Cart
+		protected void OnBtnCartClicked (object sender, EventArgs e)
+		{
+			ss_backend_assess.Commons.Cart.ClearCart ();
+		}
+
 		#region Interface
 		public int CosmeticQty{
 			get{
@@ -101,7 +104,6 @@ namespace ss_backend_assess
 				txtConQty.Text = value.ToString ();
 			}
 		}
-
 		#endregion
 	}
 }

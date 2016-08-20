@@ -38,6 +38,11 @@ namespace ss_backend_assess
 		}
 
 		#region Interface Assigment
+		public string ShipOrderTitle { 
+			set{
+				lblOrderID.Text = "Order ID : " + value;
+			}
+		}
 		public string OrderDetail{
 			set{
 				txtListBarang.Buffer.Text = value;

@@ -20,6 +20,7 @@ namespace ss_backend_assess.Commons
 		public static string strOrderID;
 		public static string strGrandTotal;
 
+		//-- Reset session variables
 		public static void RefreshSession()
 		{
 			strItemCode = new string[100];
@@ -30,6 +31,13 @@ namespace ss_backend_assess.Commons
 			strGrandTotal = "";
 		}
 
+		//-- Clear Cart from Session Variables
+		public static void ClearCart()
+		{
+			strItemCode = new string[100];
+			strItemDesc = new string[100];
+			strItemQty = new int[100];
+		}
 	}
 }
 

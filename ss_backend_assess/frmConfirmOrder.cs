@@ -49,6 +49,12 @@ namespace ss_backend_assess
 				this.Destroy ();
 			}
 		}
+			
+		//-- Back to Main Menu
+		protected void OnBtnBackClicked (object sender, EventArgs e)
+		{
+			new frmMainUser ();
+		}
 
 		#region Interface Assignment
 		public string OrderList {

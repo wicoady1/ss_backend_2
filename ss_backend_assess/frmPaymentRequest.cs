@@ -43,7 +43,6 @@ namespace ss_backend_assess
 		{
 			//--- If user not yet upload his/her payment proof
 			if (pixbuf != null) {
-				//_cPresenter.CopyImageFile (file);
 				_cPresenter.CopyImageFile(strFilePath);
 
 				new frmMainUser ();

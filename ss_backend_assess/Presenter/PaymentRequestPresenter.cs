@@ -53,6 +53,9 @@ namespace ss_backend_assess.Presenter
 			_cPayReqModel.PaymentProofUpdate (strImageFile, ss_backend_assess.Commons.Cart.strOrderID);
 
 			MessageBox.ShowMsg ("Order has been submitted as Order ID: " + ss_backend_assess.Commons.Cart.strOrderID);
+
+			//-- Refresh User Session
+			ss_backend_assess.Commons.Cart.RefreshSession();
 		}
 	}
 }
