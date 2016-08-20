@@ -54,7 +54,7 @@ namespace ss_backend_assess.Presenter
 				return true;
 			} else if (_iAdminShip.ShipStatus == "N") {
 				MessageBox.ShowMsg ("Please check \"Shipped?\" before proceed");
-			} else if (_iAdminShip.ShipID = "") {
+			} else if (_iAdminShip.ShipID == "") {
 				MessageBox.ShowMsg ("Please input the Shipment ID!");
 			}
 			return false;

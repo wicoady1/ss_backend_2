@@ -25,6 +25,10 @@ namespace ss_backend_assess
 		private global::Gtk.Fixed fixed12;
 		
 		private global::Gtk.Button btnGoPayment;
+		
+		private global::Gtk.Button btnBack;
+		
+		private global::Gtk.Fixed fixed1;
 
 		protected virtual void Build ()
 		{
@@ -124,15 +128,36 @@ namespace ss_backend_assess
 			w10.Position = 2;
 			w10.Expand = false;
 			w10.Fill = false;
+			// Container child vbox7.Gtk.Box+BoxChild
+			this.btnBack = new global::Gtk.Button ();
+			this.btnBack.CanFocus = true;
+			this.btnBack.Name = "btnBack";
+			this.btnBack.UseUnderline = true;
+			this.btnBack.Label = global::Mono.Unix.Catalog.GetString ("Back");
+			this.vbox7.Add (this.btnBack);
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.btnBack]));
+			w11.Position = 3;
+			w11.Expand = false;
+			w11.Fill = false;
+			// Container child vbox7.Gtk.Box+BoxChild
+			this.fixed1 = new global::Gtk.Fixed ();
+			this.fixed1.Name = "fixed1";
+			this.fixed1.HasWindow = false;
+			this.vbox7.Add (this.fixed1);
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.fixed1]));
+			w12.Position = 4;
+			w12.Expand = false;
+			w12.Fill = false;
 			this.Add (this.vbox7);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultHeight = 386;
 			this.Show ();
 			this.btnSubmitCoupon.Clicked += new global::System.EventHandler (this.OnBtnSubmitCouponClicked);
 			this.btnGoPayment.Clicked += new global::System.EventHandler (this.OnBtnGoPaymentClicked);
+			this.btnBack.Clicked += new global::System.EventHandler (this.OnBtnBackClicked);
 		}
 	}
 }

@@ -577,7 +577,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="ss_backend_assess.frmConfirmOrder" design-size="400 300">
+  <widget class="Gtk.Window" id="ss_backend_assess.frmConfirmOrder" design-size="400 386">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Confirm Order</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -706,12 +706,40 @@
             <property name="Fill">False</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.Button" id="btnBack">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Back</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnBackClicked" />
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed1">
+            <property name="MemberName" />
+            <property name="HasWindow">False</property>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>
   <widget class="Gtk.Window" id="ss_backend_assess.frmPaymentInput" design-size="400 330">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">frmPaymentInput</property>
+    <property name="Title" translatable="yes">Customer Data Input</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.VBox" id="vbox9">
@@ -941,7 +969,7 @@
   </widget>
   <widget class="Gtk.Window" id="ss_backend_assess.frmPaymentRequest" design-size="400 300">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">frmPaymentRequest</property>
+    <property name="Title" translatable="yes">Customer Payment Confirmation</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.VBox" id="vbox12">
@@ -1192,7 +1220,7 @@ a.n. Test Test Test</property>
   </widget>
   <widget class="Gtk.Window" id="ss_backend_assess.frmAdminOrderDetail" design-size="400 447">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">frmAdminOrderDetail</property>
+    <property name="Title" translatable="yes">Order Approval</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.VBox" id="vbox3">
@@ -1437,7 +1465,7 @@ a.n. Test Test Test</property>
   </widget>
   <widget class="Gtk.Window" id="ss_backend_assess.frmAdminProcessShip" design-size="400 300">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">frmAdminProcessShip</property>
+    <property name="Title" translatable="yes">Order Shipment Process</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.VBox" id="vbox7">

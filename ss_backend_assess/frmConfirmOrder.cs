@@ -54,6 +54,7 @@ namespace ss_backend_assess
 		protected void OnBtnBackClicked (object sender, EventArgs e)
 		{
 			new frmMainUser ();
+			this.Destroy ();
 		}
 
 		#region Interface Assignment

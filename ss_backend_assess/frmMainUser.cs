@@ -77,6 +77,7 @@ namespace ss_backend_assess
 		protected void OnBtnCartClicked (object sender, EventArgs e)
 		{
 			ss_backend_assess.Commons.Cart.ClearCart ();
+			MessageBox.ShowMsg ("Cart has been cleared");
 		}
 
 		#region Interface

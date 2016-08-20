@@ -93,13 +93,11 @@ namespace ss_backend_assess
 				file = System.IO.File.OpenRead (fcDial.Filename);
 				pixbuf = new Gdk.Pixbuf (file); 
 
-				imgPayProof.Pixbuf = pixbuf;
-
+				//-- resize image to 250 x 250
+				imgPayProof.Pixbuf = pixbuf.ScaleSimple (250, 250, Gdk.InterpType.Bilinear);
 			}
 			fcDial.Destroy ();
 		}
-
-
 	}
 }
 

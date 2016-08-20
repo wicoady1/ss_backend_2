@@ -39,7 +39,7 @@ namespace ss_backend_assess
 			global::Stetic.Gui.Initialize (this);
 			// Widget ss_backend_assess.frmPaymentRequest
 			this.Name = "ss_backend_assess.frmPaymentRequest";
-			this.Title = global::Mono.Unix.Catalog.GetString ("frmPaymentRequest");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Customer Payment Confirmation");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child ss_backend_assess.frmPaymentRequest.Gtk.Container+ContainerChild
 			this.vbox12 = new global::Gtk.VBox ();

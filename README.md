@@ -104,3 +104,8 @@ All Requirement Complete - Proceed to QA
 
 **20160820_v0018**
 - Final Commit
+
+**20160820_v0019**
+- Payment Proof Confirmation: Payment Proof Image Resize as preview
+- Admin Order Detail: Payment Proof Image Resize as preview
+- User Order Confirmation Menu: "Back" button doesn't show has been fixed

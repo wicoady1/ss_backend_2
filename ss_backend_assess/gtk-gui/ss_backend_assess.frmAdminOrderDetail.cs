@@ -49,7 +49,7 @@ namespace ss_backend_assess
 			global::Stetic.Gui.Initialize (this);
 			// Widget ss_backend_assess.frmAdminOrderDetail
 			this.Name = "ss_backend_assess.frmAdminOrderDetail";
-			this.Title = global::Mono.Unix.Catalog.GetString ("frmAdminOrderDetail");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Order Approval");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child ss_backend_assess.frmAdminOrderDetail.Gtk.Container+ContainerChild
 			this.vbox3 = new global::Gtk.VBox ();

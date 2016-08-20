@@ -111,6 +111,8 @@ namespace ss_backend_assess
 			set 
 			{
 				imgPayProof.Pixbuf = value;
+				//-- resize image to 250 x 250
+				imgPayProof.Pixbuf = value.ScaleSimple (250, 250, Gdk.InterpType.Bilinear);
 			}
 		}
 
