@@ -13,6 +13,11 @@ namespace ss_backend_assess.Interface
 {
 	public interface IPaymentRequest
 	{
+		string PaymentMessage{
+			get;
+			set;
+		}
+
 		Gdk.Pixbuf PayProof {
 			get;
 			set;

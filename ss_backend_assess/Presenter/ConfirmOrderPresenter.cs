@@ -101,6 +101,8 @@ namespace ss_backend_assess.Presenter
 
 		//--- Process and Submit Order by cutting the stock of coupon and products
 		public void SubmitOrder(){
+			//--- Save Grand Total to Session
+			ss_backend_assess.Commons.Cart.strGrandTotal = intGrandTotal.ToString ();
 
 			//--- Cut Item Stock
 			for (int i = 0; i < ss_backend_assess.Commons.Cart.strItemCode.Length; i++) {
@@ -159,7 +161,7 @@ namespace ss_backend_assess.Presenter
 					strTotalOrder += "GRAND TOTAL --------------- " + intNewGrandTotal + " IDR";
 				}
 
-
+				intGrandTotal = intNewGrandTotal;
 				_iConOrder.DisableCouponField = false;
 				_iConOrder.OrderList = strTotalOrder;
 			}

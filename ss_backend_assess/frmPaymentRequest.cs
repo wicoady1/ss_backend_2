@@ -28,6 +28,8 @@ namespace ss_backend_assess
 
 			this._connStr = new connString ();
 			this._cPresenter = new ss_backend_assess.Presenter.PaymentRequestPresenter (this, _connStr);
+
+			this._cPresenter.SetPaymentMessage (ss_backend_assess.Commons.Cart.strGrandTotal);
 		}
 
 		//--- Upload Payment Proof
@@ -41,7 +43,8 @@ namespace ss_backend_assess
 		{
 			//--- If user not yet upload his/her payment proof
 			if (pixbuf != null) {
-				_cPresenter.CopyImageFile (file);
+				//_cPresenter.CopyImageFile (file);
+				_cPresenter.CopyImageFile(strFilePath);
 
 				new frmMainUser ();
 				this.Destroy ();
@@ -62,6 +65,15 @@ namespace ss_backend_assess
 			}
 		}
 
+		public string PaymentMessage{
+			get{
+				return txtPayInfo.Buffer.Text;
+			}
+			set
+			{
+				txtPayInfo.Buffer.Text = value;
+			}
+		}
 
 		#endregion
 
@@ -78,6 +90,7 @@ namespace ss_backend_assess
 
 
 			if (fcDial.Run () == (int)ResponseType.Accept) {
+				strFilePath = fcDial.Filename;
 				file = System.IO.File.OpenRead (fcDial.Filename);
 				pixbuf = new Gdk.Pixbuf (file); 
 

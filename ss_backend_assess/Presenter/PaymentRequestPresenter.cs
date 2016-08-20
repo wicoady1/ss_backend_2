@@ -26,18 +26,27 @@ namespace ss_backend_assess.Presenter
 
 		}
 
+		//--- Set Payment Message (with Grand Total)
+		public void SetPaymentMessage(string strGrandTotal){
+			string strMessage = "";
+
+			strMessage += "Total Payment Amount: " + strGrandTotal +" IDR\n"+
+			"Please do Bank Transfer on:\n" +
+			"14151231512315123\n" +
+			"a.n. Test Test Test\n";
+
+			_iPayReq.PaymentMessage = strMessage;
+		}
+
 		//--- Copy File
-		public void CopyImageFile(System.IO.FileStream file){
+		public void CopyImageFile(string strFileSource){
 			string strPayProofPath = "ImgUpload/" + ss_backend_assess.Commons.Cart.strOrderID;
-			System.IO.FileStream fileTo = System.IO.File.Create (strPayProofPath);
 
-			file.Seek (0, System.IO.SeekOrigin.Begin);
-			file.CopyTo (fileTo);
-
-			file.Close ();
+			System.IO.File.Copy (strFileSource, strPayProofPath);
 
 			this.UpdatePaymentStatus (strPayProofPath);
 		}
+
 
 		//--- Update Database for new Image + Pay Proof Flag
 		public void UpdatePaymentStatus(string strImageFile){

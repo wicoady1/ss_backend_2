@@ -25,7 +25,14 @@ namespace ss_backend_assess
 			this._cPresenter = new ss_backend_assess.Presenter.AdminOrderDetailPresenter (this, _connStr);
 
 			//-- Load Order, which need to be approve / reject by admin
-			this._cPresenter.LoadOrderInfo (ss_backend_assess.Commons.AdminSession.strOrderID);
+			try{
+				this._cPresenter.LoadOrderInfo (ss_backend_assess.Commons.AdminSession.strOrderID);
+			}
+			catch{
+				//-- Rare bug: Even when user already selected Order ID on frmAdminOrderList, it still gets Exception Error
+				new frmAdminOrderList();
+				this.Destroy ();
+			}
 		}
 
 		//--- Approve Button Clicked

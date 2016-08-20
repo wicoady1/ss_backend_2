@@ -55,7 +55,7 @@ namespace ss_backend_assess
 			btnClose = new Gtk.Button ("Close");
 
 			//--- ADD Button Clicked Action
-			//btnClose.Clicked += new EventHandler(OnBtnProcessClicked);
+			btnClose.Clicked += new EventHandler(OnBtnCloseClicked);
 
 			//--- Put Together in VBox
 			mainVBox.PackStart (dummyLabel, false, false, 5);
@@ -66,6 +66,11 @@ namespace ss_backend_assess
 
 			// Show the window and everything on it
 			window.ShowAll ();
+		}
+
+		//--- Close This Window
+		private void OnBtnCloseClicked(object sender, EventArgs e){
+			window.Destroy ();
 		}
 
 		#region Interface Assignment

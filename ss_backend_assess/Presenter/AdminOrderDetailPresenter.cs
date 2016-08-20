@@ -43,6 +43,8 @@ namespace ss_backend_assess.Presenter
 			_iAdminDet.CustPhone = dtResult.Rows [0] ["CustPhone"].ToString();
 			_iAdminDet.CustEmail = dtResult.Rows [0] ["CustEmail"].ToString();
 			_iAdminDet.CustAdd = dtResult.Rows [0] ["CustAddress"].ToString();
+			MessageBox.ShowMsg (dtResult.Rows [0] ["PayProofPath"].ToString ());
+
 			imgData = new Gdk.Pixbuf(System.IO.File.OpenRead (dtResult.Rows [0] ["PayProofPath"].ToString()));
 
 			_iAdminDet.ImageFile = imgData;

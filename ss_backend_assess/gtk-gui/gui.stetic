@@ -973,7 +973,7 @@
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <child>
-                      <widget class="Gtk.TextView" id="textview3">
+                      <widget class="Gtk.TextView" id="txtPayInfo">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="ShowScrollbars">True</property>

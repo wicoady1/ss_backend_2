@@ -115,10 +115,6 @@ namespace ss_backend_assess
 			//--- iter will find and point to selected row
 			if (selection.GetSelected (out model, out iter)) {
 				_cPresenter.SetSelectedOrderID (model.GetValue (iter, 0).ToString ());
-
-				strMessage = "Selected Order ID = " + model.GetValue (iter, 0).ToString ();
-
-				MessageBox.ShowMsg (strMessage);
 			}
 		}
 

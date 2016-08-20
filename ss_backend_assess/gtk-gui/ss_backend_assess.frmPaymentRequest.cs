@@ -14,7 +14,7 @@ namespace ss_backend_assess
 		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		
-		private global::Gtk.TextView textview3;
+		private global::Gtk.TextView txtPayInfo;
 		
 		private global::Gtk.Label GtkLabel;
 		
@@ -67,12 +67,12 @@ namespace ss_backend_assess
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.textview3 = new global::Gtk.TextView ();
-			this.textview3.Buffer.Text = "Total Payment Amount: - IDR\nPlease do Bank Transfer on:\n14151231512315123\na.n. Test Test Test";
-			this.textview3.CanFocus = true;
-			this.textview3.Name = "textview3";
-			this.textview3.Editable = false;
-			this.GtkScrolledWindow.Add (this.textview3);
+			this.txtPayInfo = new global::Gtk.TextView ();
+			this.txtPayInfo.Buffer.Text = "Total Payment Amount: - IDR\nPlease do Bank Transfer on:\n14151231512315123\na.n. Test Test Test";
+			this.txtPayInfo.CanFocus = true;
+			this.txtPayInfo.Name = "txtPayInfo";
+			this.txtPayInfo.Editable = false;
+			this.GtkScrolledWindow.Add (this.txtPayInfo);
 			this.GtkAlignment.Add (this.GtkScrolledWindow);
 			this.frame1.Add (this.GtkAlignment);
 			this.GtkLabel = new global::Gtk.Label ();
