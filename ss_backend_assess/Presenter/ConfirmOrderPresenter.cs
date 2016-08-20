@@ -176,6 +176,13 @@ namespace ss_backend_assess.Presenter
 			int intCouponQty = 0;
 
 			dtResult = (DataTable) _cConOrderModel.CheckCouponCode (_iConOrder.CouponCode);
+
+			//-- if coupon is not exists
+			if (dtResult.Rows.Count == 0) {
+				MessageBox.ShowMsg ("Invalid Coupon. Please Try Again!");
+				return false;
+			}
+
 			strValidString = dtResult.Rows [0] ["ExpiryDate"].ToString ();
 
 			//--date is valid?

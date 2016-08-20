@@ -47,7 +47,7 @@ namespace ss_backend_assess.Presenter
 		public bool UpdateShipmentStatus (string strOrderID){
 
 			//-- check if the order is already shipped or not?
-			if (_iAdminShip.ShipStatus == "Y") {
+			if (_iAdminShip.ShipStatus == "Y" && _iAdminShip.ShipID != "") {
 				_cAdminShipModel.UpdateShipStatus (strOrderID, this._iAdminShip.ShipID);
 				MessageBox.ShowMsg ("Order ID: " + strOrderID + " has shipped succesfully!");
 

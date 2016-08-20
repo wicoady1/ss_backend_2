@@ -109,3 +109,7 @@ All Requirement Complete - Proceed to QA
 - Payment Proof Confirmation: Payment Proof Image Resize as preview
 - Admin Order Detail: Payment Proof Image Resize as preview
 - User Order Confirmation Menu: "Back" button doesn't show has been fixed
+
+**20160820_v0020**
+- Confirm Order: Empty / Invalid Coupon Validation
+- Admin Process Ship: Additional Validation for Blank input Shipment ID (revised)
