@@ -46,3 +46,12 @@ All Requirement Complete - Proceed to QA
 **20160819_v0014**
 - Additional Code Documentations
 - Additional Project and Code Cleaning
+
+**20160819_v0015**
+- Add Shell Script for Mono Develop + SQLite addins install
+- Add Shell Script for Build + Exec Programs
+
+**20160820_v0016**
+- Order List Menu Admin: Exception Bug Fixed when Payment Proof Image Loaded
+- Payment Proof Confirmation: Final Price has added to description
+- Show User Order List: Close Button has been added and worked
