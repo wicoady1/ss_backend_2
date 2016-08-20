@@ -36,6 +36,7 @@ This Project is using modified "Model-View-Controller" abstraction model as desc
 
 **Additional Info:**
 - You can check the project and scripts via "MonoDevelop", open "ss_backend_assess.sln"
+- Database File is located on "ss_backend_2/ss_backend_assess/bin/Debug"
 
 ## Change Logs
 **20160817_v0001**
