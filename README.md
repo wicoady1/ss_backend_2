@@ -31,10 +31,11 @@ You can check and modify the values with "DB Browser for SQLite"
 
 **Abstraction Layer Model:**
 This Project is using modified "Model-View-Controller" abstraction model as described below:
+
 **DB** <--> Layer:Model <--> Layer:Presenter <--> Layer:Interface <--> **User Interface**
 
 **Additional Info:**
-- You can check the project and scripts via "MonoDevelop"
+- You can check the project and scripts via "MonoDevelop", open "ss_backend_assess.sln"
 
 ## Change Logs
 **20160817_v0001**
