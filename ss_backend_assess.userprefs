@@ -1,6 +1,12 @@
 ﻿<Properties StartupItem="ss_backend_assess/ss_backend_assess.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ss_backend_assess/Presenter/AdminProcessShipPresenter.cs">
+    <Files>
+      <File FileName="ss_backend_assess/Presenter/ConfirmOrderPresenter.cs" Line="144" Column="18" />
+      <File FileName="ss_backend_assess/Presenter/UserShipCheckPresenter.cs" Line="1" Column="1" />
+      <File FileName="ss_backend_assess/Presenter/AdminProcessShipPresenter.cs" Line="51" Column="58" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
